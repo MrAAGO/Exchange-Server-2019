@@ -27,7 +27,7 @@ Overall, Microsoft Exchange Server 2019 is a powerful and versatile email and ca
 <p><b>In This project i am going to Configure several key settings of Microsoft Exchange Server
 
   
- <h2>Network Configuration: This includes configuring the server's IP address, DNS settings, and domain name.</h2>
+ <h4>Network Configuration: This includes configuring the server's IP address, DNS settings, and domain name.</h4>
 
 <h2>Mailbox Database Configuration: This includes creating and configuring mailbox databases, as well as setting up mailbox storage quotas.</h2>
 
