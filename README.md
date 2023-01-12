@@ -25,7 +25,9 @@ In addition to these features, Exchange Server 2019 also offers a number of othe
 Overall, Microsoft Exchange Server 2019 is a powerful and versatile email and calendar server software that can meet the needs of businesses of all sizes. With its scalability, security, and robust calendar and scheduling capabilities, it is an excellent choice for businesses that rely heavily on email and calendar functionality .</p>
 
 <p><b>In This project i am going to Configure several key settings of Microsoft Exchange Server
-Network Configuration: This includes configuring the server's IP address, DNS settings, and domain name.
+
+  
+ Network Configuration: This includes configuring the server's IP address, DNS settings, and domain name.
 
 Mailbox Database Configuration: This includes creating and configuring mailbox databases, as well as setting up mailbox storage quotas.
 
