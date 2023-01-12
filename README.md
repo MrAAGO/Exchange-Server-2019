@@ -9,7 +9,7 @@
     <nav>
       <ul>
         <li><a href="#introduction">Introduction</a></li>
-        <li><a href="#milestones">Installation and Configuration</a></li>
+        <li><a href="https://github.com/MrAAGO/Exchange-server-2019-Installation-and-configuration">Installation and Configuration</a></li>
         <li><a href="#conclusion">Conclusion</a></li>
       </ul>
     </nav>
@@ -44,6 +44,7 @@ Backup and Disaster Recovery Configuration: This includes configuring the server
 
 Monitoring and Reporting Configuration: This includes configuring the server's monitoring and reporting settings, such as setting up performance counters and creating custom reports...</p></b>
     </section>
+    
     <section id="milestones">
       <h2>Milestones</h2>
       <h3>Milestone 1</h3>
