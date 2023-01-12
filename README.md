@@ -25,9 +25,9 @@ Exchange Server 2019 also offers robust calendar and scheduling capabilities. Bu
 
 In addition to these features, Exchange Server 2019 also offers a number of other capabilities such as support for mobile devices, integration with other Microsoft products like SharePoint and Skype for Business, and support for various mail clients like Outlook, Apple Mail, etc.
 
-Overall, Microsoft Exchange Server 2019 is a powerful and versatile email and calendar server software that can meet the needs of businesses of all sizes. With its scalability, security, and robust calendar and scheduling capabilities, it is an excellent choice for businesses that rely heavily on email and calendar functionality
+Overall, Microsoft Exchange Server 2019 is a powerful and versatile email and calendar server software that can meet the needs of businesses of all sizes. With its scalability, security, and robust calendar and scheduling capabilities, it is an excellent choice for businesses that rely heavily on email and calendar functionality .</p>
 
-In This project i am going to Configure several key settings of Microsoft Exchange Server
+<p><b>In This project i am going to Configure several key settings of Microsoft Exchange Server
 Network Configuration: This includes configuring the server's IP address, DNS settings, and domain name.
 
 Mailbox Database Configuration: This includes creating and configuring mailbox databases, as well as setting up mailbox storage quotas.
@@ -42,7 +42,7 @@ High Availability Configuration: This includes configuring the server's high ava
 
 Backup and Disaster Recovery Configuration: This includes configuring the server's backup and disaster recovery settings, such as setting up backup schedules and creating recovery plans.
 
-Monitoring and Reporting Configuration: This includes configuring the server's monitoring and reporting settings, such as setting up performance counters and creating custom reports...</p>
+Monitoring and Reporting Configuration: This includes configuring the server's monitoring and reporting settings, such as setting up performance counters and creating custom reports...</p></b>
     </section>
     <section id="milestones">
       <h2>Milestones</h2>
