@@ -1,9 +1,6 @@
 # Exchange-Server-2019
 
-
-<title> Microsost Exchange Server 2019</title>
-
-  </head>
+</head>
   <body>
     <h1>Project Journey</h1>
     <nav>
