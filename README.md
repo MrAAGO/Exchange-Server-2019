@@ -27,21 +27,21 @@ Overall, Microsoft Exchange Server 2019 is a powerful and versatile email and ca
 <p><b>In This project i am going to Configure several key settings of Microsoft Exchange Server
 
   
- <h4>Network Configuration: This includes configuring the server's IP address, DNS settings, and domain name.</h4>
+<li>Network Configuration: This includes configuring the server's IP address, DNS settings, and domain name.</li>
 
-<h2>Mailbox Database Configuration: This includes creating and configuring mailbox databases, as well as setting up mailbox storage quotas.</h2>
+Mailbox Database Configuration: This includes creating and configuring mailbox databases, as well as setting up mailbox storage quotas.
 
-<h2>Transport Configuration: This includes configuring the server's message routing and transport settings, such as setting up connectors and transport rules.</h2>
+Transport Configuration: This includes configuring the server's message routing and transport settings, such as setting up connectors and transport rules.</h2>
 
-<h2>Anti-Spam and Anti-Malware Configuration: This includes configuring the server's built-in spam and malware protection, as well as setting up additional security measures like data loss prevention and multi-factor authentication.</h2>
+Anti-Spam and Anti-Malware Configuration: This includes configuring the server's built-in spam and malware protection, as well as setting up additional security measures like data loss prevention and multi-factor authentication.
 
-<h2>Client Access Configuration: This includes configuring the server's client access settings, such as setting up Outlook Web Access and Exchange ActiveSync.</h2>
+Client Access Configuration: This includes configuring the server's client access settings, such as setting up Outlook Web Access and Exchange ActiveSync.</h2>
 
-<h2>High Availability Configuration: This includes configuring the server's high availability features, such as setting up database availability groups and load balancing.</h2>
+High Availability Configuration: This includes configuring the server's high availability features, such as setting up database availability groups and load balancing.
 
-<h2>Backup and Disaster Recovery Configuration: This includes configuring the server's backup and disaster recovery settings, such as setting up backup schedules and creating recovery plans.</h2>
+Backup and Disaster Recovery Configuration: This includes configuring the server's backup and disaster recovery settings, such as setting up backup schedules and creating recovery plans.
 
-<h2>Monitoring and Reporting Configuration: This includes configuring the server's monitoring and reporting settings, such as setting up performance counters and creating custom reports...</h2></p></b>
+Monitoring and Reporting Configuration: This includes configuring the server's monitoring and reporting settings, such as setting up performance counters and creating custom reports...</p></b>
     </section>
     
     
