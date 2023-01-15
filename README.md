@@ -156,9 +156,9 @@ It's also worth noting that the folder path for the edb and log files should exi
 
 <li><b>Create the resource mailbox: Use the following command to create the resource mailbox:</li></b>
 
-  `New-Mailbox -Name "Conference Room A" -Alias "confroomA" -UserPrincipalName "confroomA@example.com" -Resource -Room`
+  `New-Mailbox -Name ConfRoom1 -DisplayName "Conference Room 1" -Room`
   
- This command creates a new resource mailbox named "Conference Room A" with the alias "confroomA" and the email address "confroomA@example.com". The -Resource switch specifies that this mailbox is a resource mailbox and the -Room switch specifies that it is a room mailbox.
+ This command creates a new resource mailbox named "Conference Room 1" with the alias "confroom1" and the email address "confroom1@example.com". -Room switch specifies that it is a room mailbox.
   
 <li><b>Specify the resource capacity: Use the following command to set the capacity of the conference room:</li></b>
   
