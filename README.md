@@ -7,7 +7,7 @@
       <ul>
         <li><a href="#introduction">Introduction</a></li>
         <li><a href="https://github.com/MrAAGO/Exchange-server-2019-Installation-and-configuration">Installation and Configuration</a></li>
-        <li><a href="# Create User Mailbox ">Create User Mailbox</a></li>
+        <li><a href="#Create User Mailbox">Create User Mailbox</a></li>
       </ul>
     </nav>
     <section id="introduction">
@@ -44,7 +44,7 @@ Overall, Microsoft Exchange Server 2019 is a powerful and versatile email and ca
 <li>Monitoring and Reporting Configuration: This includes configuring the server's monitoring and reporting settings, such as setting up performance counters and creating custom reports...</p></b>
     </section>
     
-   <section id=# Create User Mailbox ">
+   <section id="#Create User Mailbox">
    <h2>Create User Mailbox</h2>
   
   <p>A user mailbox in Exchange Server is a mailbox that is associated with a specific user. It is the primary mailbox for an individual user and is used to store and manage their email messages, calendar items, contacts, tasks, and other data. A user mailbox is created when a new user is added to an organization's Exchange Server and is typically accessed through a client such as Outlook or Outlook Web Access (OWA).
