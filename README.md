@@ -76,6 +76,9 @@ To create a user mailbox in Exchange Server 2019, you can use the Exchange Manag
     
  <li>Click save</li>
 
+![3](https://user-images.githubusercontent.com/86381942/212559581-7a0d188d-5583-48a5-8521-dd2fb65695db.png)
+
+
 <li>You can also create Mailbox Through Existing Users ,just browse and save the new users mailbox.</li>
   
   ![2](https://user-images.githubusercontent.com/86381942/212558906-2cb5a7f1-92c4-4698-adfb-b5ed56ed196c.png)
