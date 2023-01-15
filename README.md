@@ -15,6 +15,7 @@
          <li><a href="#database">Rename and Move a Mailbox Database</a></li>
         <li><a href="#databasenew">Create a New Mailbox Database</a></li>
         <li><a href="#resource">Create Resource Mailboxes</a></li>
+        <li><a href="#distribution">Create Distribution Group</a></li>
       </ul>
     </nav>
     <section id="introduction">
@@ -186,5 +187,25 @@ You can also manage and schedule resource mailboxes through the Outlook client o
 
 ![7](https://user-images.githubusercontent.com/86381942/212562259-38ed7b8c-287f-40c2-b710-f1a7b5e4a60c.png)
 
+<section id="distribution">
+      <h2>Create Distribution Group in Exchange 2019</h2>
 
+To create a distribution group in Exchange 2019 using PowerShell, you can use the New-DistributionGroup cmdlet. Here are the steps:
 
+<li>Open the Exchange Management Shell on your Exchange Server.<\li>
+<li>Type the following command to create a new distribution group:<\li>
+
+`New-DistributionGroup -Name "Managers" -Type "Distribution"`
+
+<li>Replace "GroupName" with the desired name for the distribution group.<\li>
+<li>Press Enter.<\li>
+
+<b>You can also configure other settings for the distribution group by including them in the command. For example, you can specify the email address for the group with the -PrimarySmtpAddress parameter, set the group's members with the -Members parameter, and set the group's permissions with the -ManagedBy parameter.</b>
+
+`New-DistributionGroup -Name "Marketing Team" -Type "Distribution" -PrimarySmtpAddress "marketing@contoso.com" -Members "John Smith","Jane Doe" -ManagedBy "admin@contoso.com`
+
+<li>You can also use the following command to add a Distribution Group Manager</li>
+
+`Add-DistributionGroupMember -Identity "Marketing Team" -Member "Manager1`
+
+Once the distribution group is created, you can use the Get-DistributionGroup cmdlet to verify that the group has been created, and use the Set-DistributionGroup cmdlet to modify the group's settings.
