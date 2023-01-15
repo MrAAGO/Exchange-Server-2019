@@ -13,6 +13,7 @@
         <li><a href="https://github.com/MrAAGO/Exchange-server-2019-Installation-and-configuration">Installation and Configuration</a></li>
         <li><a href="#mailbox">Create User Mailbox</a></li>
          <li><a href="#database">Rename and Move a Mailbox Database</a></li>
+        <li><a href="#databasenew">Create a New Mailbox Database</a></li>
       </ul>
     </nav>
     <section id="introduction">
@@ -117,3 +118,5 @@ You can also use the Exchange Admin Center (EAC) in the GUI to rename and move a
  
   ![4](https://user-images.githubusercontent.com/86381942/212560490-e47e6064-959b-4a0c-b868-9051745d31ea.png)
 
+<section id="databasenew">
+      <h2>Create a New Mailbox Database in Exchange 2019</h2>
