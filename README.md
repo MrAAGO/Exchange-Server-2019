@@ -114,4 +114,6 @@ You can also use the Exchange Admin Center (EAC) in the GUI to rename and move a
 <li>Fill out the form with the new path</li>
 <li>Click on move</li>
 <li>You should also be logged in as a member of the Organization Management role group or the Recipient Management role group to perform this task.</li>
-  
+ 
+  ![4](https://user-images.githubusercontent.com/86381942/212560490-e47e6064-959b-4a0c-b868-9051745d31ea.png)
+
