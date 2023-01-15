@@ -182,3 +182,9 @@ It's important to note that you should have the necessary permissions to perform
 
 You can also manage and schedule resource mailboxes through the Outlook client or Outlook Web Access (OWA) by users with the correct permissions. 
   
+![6](https://user-images.githubusercontent.com/86381942/212562255-4e31fc34-c04e-4e72-872d-6ed83f13e8ac.png)
+
+![7](https://user-images.githubusercontent.com/86381942/212562259-38ed7b8c-287f-40c2-b710-f1a7b5e4a60c.png)
+
+
+
