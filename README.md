@@ -47,7 +47,8 @@ Overall, Microsoft Exchange Server 2019 is a powerful and versatile email and ca
    <section id="#Create User Mailbox">
    <h2>Create User Mailbox</h2>
   
-  <p>A user mailbox in Exchange Server is a mailbox that is associated with a specific user. It is the primary mailbox for an individual user and is used to store and manage their email messages, calendar items, contacts, tasks, and other data. A user mailbox is created when a new user is added to an organization's Exchange Server and is typically accessed through a client such as Outlook or Outlook Web Access (OWA).
+  <p>
+  A user mailbox in Exchange Server is a mailbox that is associated with a specific user. It is the primary mailbox for an individual user and is used to store and manage their email messages, calendar items, contacts, tasks, and other data. A user mailbox is created when a new user is added to an organization's Exchange Server and is typically accessed through a client such as Outlook or Outlook Web Access (OWA).
   
 To create a user mailbox in Exchange Server 2019, you can use the Exchange Management Shell (EMS) to run the following command:
 
