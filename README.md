@@ -148,7 +148,7 @@ It's also worth noting that the folder path for the edb and log files should exi
   
   ![5](https://user-images.githubusercontent.com/86381942/212561516-fdbf7af6-882f-4d07-9af0-32c84ec48dd4.png)
   
-<section id="resources">
+<section id="resource">
       <h2>Create Resource Mailboxes in Exchange 2019</h2> 
   Resource mailboxes in Exchange Server 2019 are used to manage and schedule resources such as conference rooms, equipment, or other shared resources. Here are the steps to create a resource mailbox in Exchange Server 2019:
 
@@ -161,10 +161,13 @@ It's also worth noting that the folder path for the edb and log files should exi
  This command creates a new resource mailbox named "Conference Room A" with the alias "confroomA" and the email address "confroomA@example.com". The -Resource switch specifies that this mailbox is a resource mailbox and the -Room switch specifies that it is a room mailbox.
   
 <li><b>Specify the resource capacity: Use the following command to set the capacity of the conference room:</li></b>
+  
 `Set-CalendarProcessing -Identity "confroomA" -ResourceCapacity 10`
+  
 This command sets the capacity of the conference room to 10, meaning that it can accommodate up to 10 people.
   
 <li><b>Add additional settings: Use the following command to add additional settings to the resource mailbox, such as the booking window, the automatic reply message, and more:</li></b>
+
   `Set-CalendarProcessing -Identity "confroomA" -AddOrganizerToSubject $True -AllowConflicts $False -DeleteComments $True`
   
  You can also use the Exchange Admin Center (EAC) in the GUI to create a resource mailbox:
