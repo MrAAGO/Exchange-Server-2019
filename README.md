@@ -112,6 +112,6 @@ You can also use the Exchange Admin Center (EAC) in the GUI to rename and move a
 <li>Select the database you want to move and click on more</li>
 <li>then choose move database path.</li>
 <li>Fill out the form with the new path</li>
-<li><li>Click on move</li>
+<li>Click on move</li>
 <li>You should also be logged in as a member of the Organization Management role group or the Recipient Management role group to perform this task.</li>
   
