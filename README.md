@@ -131,8 +131,11 @@ You can also use the Exchange Admin Center (EAC) in the GUI to rename and move a
 You can also use the Exchange Admin Center (EAC) in the GUI to create a new mailbox database:
 
   <li>Go to servers, then databases</li>
+  
 <li>Click the + button.</li>
-<li><Fill out the form with the required information, including the name of the new mailbox database, the server it will be located on, and the path for the .edb file and the log files.</li>
+  
+<li>Fill out the form with the required information, including the name of the new mailbox database, the server it will be located on, and the path for the .edb file and the log files.</li>
+  
 <li>Click save.</li>
   
 It's important to note that you should schedule a maintenance window and make sure that there are no active users on the mailbox database when you are creating it, and also that you should have the necessary permissions to perform this task.
