@@ -144,3 +144,8 @@ You should also be logged in as a member of the Organization Management role gro
 You can also specify other parameters such as the maximum size of the database, the retention policy, the mailbox database replication, and more.
 
 It's also worth noting that the folder path for the edb and log files should exist before the creation of the mailbox database, and that the folder should have the proper permission to the service account running the mailbox role.
+  
+  ![5](https://user-images.githubusercontent.com/86381942/212561516-fdbf7af6-882f-4d07-9af0-32c84ec48dd4.png)
+  
+  
+
