@@ -56,8 +56,8 @@ Overall, Microsoft Exchange Server 2019 is a powerful and versatile email and ca
   
 To create a user mailbox in Exchange Server 2019, you can use the Exchange Management Shell (EMS) to run the following command:
 
-New-Mailbox -Name "John Smith" -Alias "jsmith" -UserPrincipalName "jsmith@example.com" -FirstName "John" -LastName "Smith" -Password (ConvertTo-SecureString -String "Pa$$w0rd" -AsPlainText -Force) -Database "Mailbox Database"
-  
+  ![carbon](https://user-images.githubusercontent.com/86381942/212557957-f7f20266-70fe-471d-bb6d-b96a833ca51c.png)
+
   This command creates a new mailbox for a user named John Smith, with the alias "jsmith" and the email address "jsmith@example.com". The user's first name is "John" and last name is "Smith". The password for the mailbox is "Pa$$w0rd", which is passed as a secure string. The mailbox is created on the database "Mailbox Database".</p>
  
   
