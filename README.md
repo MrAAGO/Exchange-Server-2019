@@ -192,8 +192,8 @@ You can also manage and schedule resource mailboxes through the Outlook client o
 
 To create a distribution group in Exchange 2019 using PowerShell, you can use the New-DistributionGroup cmdlet. Here are the steps:
 
-<li>Open the Exchange Management Shell on your Exchange Server.<\li>
-<li>Type the following command to create a new distribution group:<\li>
+<li>Open the Exchange Management Shell on your Exchange Server.
+<li>Type the following command to create a new distribution group:
 
 `New-DistributionGroup -Name "Managers" -Type "Distribution"`
 
