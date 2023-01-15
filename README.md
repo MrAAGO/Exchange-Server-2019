@@ -109,9 +109,9 @@ Mount the mailbox database: Use the following command to mount the mailbox datab
 You can also use the Exchange Admin Center (EAC) in the GUI to rename and move a mailbox database:
 
   <li>Go to servers, then databases</li>
-<li><li><li><li><li>Select the database you want to move and click on more</li>
-<li><li><li><li>then choose move database path.</li>
-<li><li><li>Fill out the form with the new path</li>
+<li>Select the database you want to move and click on more</li>
+<li>then choose move database path.</li>
+<li>Fill out the form with the new path</li>
 <li><li>Click on move</li>
 <li>You should also be logged in as a member of the Organization Management role group or the Recipient Management role group to perform this task.</li>
   
