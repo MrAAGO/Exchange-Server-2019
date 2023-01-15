@@ -87,26 +87,5 @@ To create a user mailbox in Exchange Server 2019, you can use the Exchange Manag
 <section id="database">
       <h2>Rename and Move a Mailbox Database</h2>
   
-  To rename and move a mailbox database in Exchange Server 2019, you can use the Exchange Management Shell (EMS) to perform the following steps:
+`code`Rename-MailboxDatabase -Identity "OldName" -NewName "NewName"
 
-Rename the mailbox database: Use the following command to rename the mailbox database:
-Copy code
-Rename-MailboxDatabase -Identity "OldName" -NewName "NewName"
-Move the mailbox database: Use the following command to move the mailbox database to a new location:
-Copy code
-Move-MailboxDatabase -Identity "NewName" -EdbFilePath "D:\NewLocation\NewName.edb"
-You need to change the path of the edb file to the location you want to move the mailbox database to.
-
-Mount the mailbox database: Use the following command to mount the mailbox database in its new location:
-Copy code
-Mount-Database "NewName"
-It's important to note that you should schedule a maintenance window and make sure that there are no active users on the mailbox database when you are renaming and moving it, and also that you should have the necessary permissions to perform this task.
-
-You can also use the Exchange Admin Center (EAC) in the GUI to rename and move a mailbox database:
-
-Go to servers, then databases
-Select the database you want to move and click on more
-then choose move database path.
-Fill out the form with the new path
-Click on move
-You should also be logged in as a member of the Organization Management role group or the Recipient Management role group to perform this task.
