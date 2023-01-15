@@ -120,3 +120,23 @@ You can also use the Exchange Admin Center (EAC) in the GUI to rename and move a
 
 <section id="databasenew">
       <h2>Create a New Mailbox Database in Exchange 2019</h2>
+  ### To create a new mailbox database in Exchange Server 2019, you can use the Exchange Management Shell (EMS) to run the following command:
+  
+![carbon (1)](https://user-images.githubusercontent.com/86381942/212561080-864bb6b6-8af9-44e9-9867-6db838cfdb61.png)
+ 
+  `New-MailboxDatabase -Name "NewMailboxDatabase" -Server "ServerName" -EdbFilePath "D:\MailboxDatabases\NewMailboxDatabase.edb" -LogFolderPath "D:\MailboxDatabases\NewMailboxDatabase`
+  
+  This command creates a new mailbox database named "NewMailboxDatabase" on the server "ServerName". The mailbox database's .edb file is stored in the "D:\MailboxDatabases" folder and the log files are stored in the "D:\MailboxDatabases\NewMailboxDatabase" folder.
+
+You can also use the Exchange Admin Center (EAC) in the GUI to create a new mailbox database:
+
+Go to servers, then databases
+Click the + button.
+Fill out the form with the required information, including the name of the new mailbox database, the server it will be located on, and the path for the .edb file and the log files.
+Click save.
+It's important to note that you should schedule a maintenance window and make sure that there are no active users on the mailbox database when you are creating it, and also that you should have the necessary permissions to perform this task.
+You should also be logged in as a member of the Organization Management role group or the Recipient Management role group to perform this task.
+
+You can also specify other parameters such as the maximum size of the database, the retention policy, the mailbox database replication, and more.
+
+It's also worth noting that the folder path for the edb and log files should exist before the creation of the mailbox database, and that the folder should have the proper permission to the service account running the mailbox role.
