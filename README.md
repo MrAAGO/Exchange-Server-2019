@@ -7,7 +7,7 @@
       <ul>
         <li><a href="#introduction">Introduction</a></li>
         <li><a href="https://github.com/MrAAGO/Exchange-server-2019-Installation-and-configuration">Installation and Configuration</a></li>
-        <li><a href="#Create User Mailbox">Create User Mailbox</a></li>
+        <li><a href="#create User Mailbox">Create User Mailbox</a></li>
       </ul>
     </nav>
     <section id="introduction">
@@ -44,7 +44,7 @@ Overall, Microsoft Exchange Server 2019 is a powerful and versatile email and ca
 <li>Monitoring and Reporting Configuration: This includes configuring the server's monitoring and reporting settings, such as setting up performance counters and creating custom reports...</p></b>
     </section>
     
-   <section id="#Create User Mailbox">
+   <section id="#create User Mailbox">
    <h2>Create User Mailbox</h2>
   
   <p>
