@@ -361,7 +361,7 @@ Dynamic Distribution Groups are created using the Exchange Management Shell (EMS
     
     ```powershell
     New-DynamicDistributionGroup -Name "Marketing Team" -OrganizationalUnit "OU=Marketing,DC=yourdomain,DC=com" -ManagedBy "JohnDoe" -RecipientFilter {((OrganizationalUnit -eq "OU=Marketing,DC=yourdomain,DC=com") -and (Department -eq "Marketing") -and (RecipientType -eq 'UserMailbox') -and (Enabled -eq $True))} -Notes "Marketing Team distribution group" 
-  ```
+   ```
 
     *Create a dynamic distribution group in ECP**   
 - Log in to the ECP using your administrator credentials.
