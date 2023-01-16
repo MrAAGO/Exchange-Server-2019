@@ -351,17 +351,17 @@ Dynamic Distribution Groups are created using the Exchange Management Shell (EMS
 
     - You can also use other attributes to filter the dynamic distribution group, like the department, the title, the location, the company, etc.
     
-```powershell
-    New-DynamicDistributionGroup -Name "Marketing Team" -OrganizationalUnit "OU=Marketing,DC=yourdomain,DC=com" -ManagedBy "JohnDoe" -RecipientFilter {((OrganizationalUnit -eq "OU=Marketing,DC=yourdomain,DC=com") -and (Department -eq "Marketing") -and (RecipientType -eq 'UserMailbox') -and (Enabled -eq $True))}
-```
+
+ `New-DynamicDistributionGroup -Name "Marketing Team" -OrganizationalUnit "OU=Marketing,DC=yourdomain,DC=com" -ManagedBy "JohnDoe" -RecipientFilter {((OrganizationalUnit -eq "OU=Marketing,DC=yourdomain,DC=com") -and (Department -eq "Marketing") -and (RecipientType -eq 'UserMailbox') -and (Enabled -eq $True))}`
+
  
     - This command creates a dynamic distribution group called "Marketing Team" that includes all enabled users in the "Marketing" department and in the "Marketing" OU, with "JohnDoe" as the designated owner.   
     
   - You can also use the -Notes parameter to add a note to the distribution group.
     
-    ```powershell
-    New-DynamicDistributionGroup -Name "Marketing Team" -OrganizationalUnit "OU=Marketing,DC=yourdomain,DC=com" -ManagedBy "JohnDoe" -RecipientFilter {((OrganizationalUnit -eq "OU=Marketing,DC=yourdomain,DC=com") -and (Department -eq "Marketing") -and (RecipientType -eq 'UserMailbox') -and (Enabled -eq $True))} -Notes "Marketing Team distribution group" 
-   ```
+   
+    `New-DynamicDistributionGroup -Name "Marketing Team" -OrganizationalUnit "OU=Marketing,DC=yourdomain,DC=com" -ManagedBy "JohnDoe" -RecipientFilter {((OrganizationalUnit -eq "OU=Marketing,DC=yourdomain,DC=com") -and (Department -eq "Marketing") -and (RecipientType -eq 'UserMailbox') -and (Enabled -eq $True))} -Notes "Marketing Team distribution group` 
+   
 
     *Create a dynamic distribution group in ECP**   
 - Log in to the ECP using your administrator credentials.
