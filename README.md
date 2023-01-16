@@ -241,15 +241,15 @@ Please note that some of the properties may not be editable after the group has 
 ##**Managing a Distribution Group with powershell**##
 **PowerShell to manage distribution groups in Exchange 2019. Here are some examples of how to perform common management tasks:**
 
-  -Adding members to a group:
+  - Adding members to a group:
  ```powershell
   Add-DistributionGroupMember -Identity "GroupName" -Member "User1","User2"
 ```
-  -Removing members from a group:
+  - Removing members from a group:
   ```powershell
   Remove-DistributionGroupMember -Identity "GroupName" -Member "User1","User2"
 ```
--Modifying Group properties:
+- Modifying Group properties:
 ```powershell
   Set-DistributionGroup -Identity "GroupName" -PropertyName "PropertyValue"
 ```
@@ -261,7 +261,7 @@ For example:
 ```powershell
 Remove-DistributionGroup -Identity "GroupName"
   ```
--Listing the members of a group
+- Listing the members of a group
 ```powershell
 Get-DistributionGroupMember -Identity "GroupName"
   ```
@@ -270,11 +270,11 @@ Get-DistributionGroupMember -Identity "GroupName"
 ```powershell
 Get-DistributionGroup
   ```
--Moving Distribution group to different organizational unit
+- Moving Distribution group to different organizational unit
 ```powershell
 Move-DistributionGroup -Identity "GroupName" -OrganizationalUnit "OU=NewMarketing,DC=yourdomain,DC=com"  
 ```
-##** Creating a Distribution Group: **##
+##**Creating a Distribution Group**##
   
 Using the Exchange Admin Center (EAC):
 
