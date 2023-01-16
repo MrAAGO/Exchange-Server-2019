@@ -340,7 +340,7 @@ Dynamic Distribution Groups are created using the Exchange Management Shell (EMS
     
    `Get-DynamicDistributionGroup -Identity "Marketing Team" | Get-Recipient | Select-Object -ExpandProperty PrimarySmtpAddress` 
 
-     - Here is an example of how to create a dynamic distribution group that includes all users in the "Marketing" OU, with a designated owner, and a membership rule that excludes disabled user accounts:
+ - Here is an example of how to create a dynamic distribution group that includes all users in the "Marketing" OU, with a designated owner, and a membership rule that excludes disabled user accounts:
     
    `New-DynamicDistributionGroup -Name "Marketing Team" -OrganizationalUnit "OU=Marketing,DC=yourdomain,DC=com" -ManagedBy "JohnDoe" -RecipientFilter {((OrganizationalUnit -eq "OU=Marketing,DC=yourdomain,DC=com") -and (RecipientType -eq 'UserMailbox') -and (Enabled -eq $True))}`
 
