@@ -205,11 +205,10 @@ To create a distribution group in Exchange 2019 using PowerShell, you can use th
 <li>Open the Exchange Management Shell on your Exchange Server.
 <li>Type the following command to create a new distribution group:
 
-`New-DistributionGroup -Name "Managers" -Type "Distribution"`
-
-<li>Replace "GroupName" with the desired name for the distribution group.
-<li>Press Enter.
-
+```powershell
+New-DistributionGroup -Name "Marketing Team" -Type "Distribution" -PrimarySmtpAddress "marketing@yourdomain.com" -OrganizationalUnit "OU=Marketing,DC=yourdomain,DC=com"
+```
+  
 <b>You can also configure other settings for the distribution group by including them in the command. For example, you can specify the email address for the group with the -PrimarySmtpAddress parameter, set the group's members with the -Members parameter, and set the group's permissions with the -ManagedBy parameter.</b>
 
 `New-DistributionGroup -Name "Marketing Team" -Type "Distribution" -PrimarySmtpAddress "marketing@contoso.com" -Members "John Smith","Jane Doe" -ManagedBy "admin@contoso.com`
