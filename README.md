@@ -190,6 +190,15 @@ You can also manage and schedule resource mailboxes through the Outlook client o
 
 <section id="distribution">
       <h2>Create Distribution Group in Exchange 2019</h2>
+      
+A distribution group, also known as a distribution list, is a feature in Exchange Server that allows you to send an email to a group of people without having to add each recipient individually.
+
+Distribution groups are used to create email addresses that represent a group of people, such as a department, project team, or group of external partners. Once the distribution group is created, you can add members to it, and then use the group's email address to send emails to all members of the group at once  
+
+**There are two types of Distribution groups**
+
+Distribution Group: This group is used for sending emails to the group members and it doesn't have a mailbox.
+Mail-Enabled Distribution Group: This group is used for sending emails to the group members and it also has a mailbox.
 
 To create a distribution group in Exchange 2019 using PowerShell, you can use the New-DistributionGroup cmdlet. Here are the steps:
 
