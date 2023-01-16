@@ -198,6 +198,7 @@ Distribution groups are used to create email addresses that represent a group of
 **There are two types of Distribution groups**
 
 Distribution Group: This group is used for sending emails to the group members and it doesn't have a mailbox.
+  
 Mail-Enabled Distribution Group: This group is used for sending emails to the group members and it also has a mailbox.
 
 To create a distribution group in Exchange 2019 using PowerShell, you can use the New-DistributionGroup cmdlet. Here are the steps:
@@ -210,9 +211,80 @@ New-DistributionGroup -Name "Marketing Team" -Type "Distribution" -PrimarySmtpAd
 ```
 ![8](https://user-images.githubusercontent.com/86381942/212593061-db39c7e4-4891-459b-abd5-2733631f71c3.png)
 
+![9](https://user-images.githubusercontent.com/86381942/212593154-b1afb2c6-f45d-4314-8b24-86aef348e60b.png)
+
   
 This will create the distribution group "Marketing Team" in the "Marketing" OU. If the specified OU does not exist, the cmdlet will throw an error.
 
 You can also use the -OrganizationalUnit parameter to move an existing distribution group to a different OU by using the Move-DistributionGroup cmdlet
+  
+```powershell
+  Move-DistributionGroup -Identity "Marketing Team" -OrganizationalUnit "OU=NewMarketing,DC=yourdomain,DC=com"
+```
+This will move the "Marketing Team" distribution group to the "NewMarketing" OU.
+  
+ While creating a distribution group using the New-DistributionGroup cmdlet in PowerShell, you can specify additional properties such as -OrganizationalUnit, -ManagedBy, -DisplayName, -Notes, etc.
+
+-OrganizationalUnit: Specifies the OU where the distribution group should be created.
+-ManagedBy: Specifies the user or group that will manage the distribution group.
+-DisplayName: Specifies a display name for the distribution group.
+-Notes: Specifies notes or comments about the distribution group.
+
+Here is an example of how to create a distribution group with additional properties: 
+  
+```powershell
+  New-DistributionGroup -Name "Marketing Team" -Type "Distribution" -PrimarySmtpAddress "marketing@yourdomain.com" -OrganizationalUnit "OU=Marketing,DC=yourdomain,DC=com" -ManagedBy "JohnDoe" -DisplayName "Marketing Department" -Notes "This is the Marketing Team distribution group"
+```
+This will create a distribution group called "Marketing Team" with the email address "marketing@yourdomain.com", located in the "Marketing" OU, managed by user "JohnDoe", with a display name of "Marketing Department" and a note of "This is the Marketing Team distribution group".
+Please note that some of the properties may not be editable after the group has been created.
+  
+##**Managing a Distribution Group with powershell**##
+**PowerShell to manage distribution groups in Exchange 2019. Here are some examples of how to perform common management tasks:**
+
+  -Adding members to a group:
+ ```powershell
+  Add-DistributionGroupMember -Identity "GroupName" -Member "User1","User2"
+```
+  -Removing members from a group:
+  ```powershell
+  Remove-DistributionGroupMember -Identity "GroupName" -Member "User1","User2"
+```
+-Modifying Group properties:
+```powershell
+  Set-DistributionGroup -Identity "GroupName" -PropertyName "PropertyValue"
+```
+For example: 
+```powershell
+  Set-DistributionGroup -Identity "Marketing Team" -DisplayName "Marketing Department" -Notes "This is the Marketing Team distribution group"
+```
+-Deleting a group
+```powershell
+Remove-DistributionGroup -Identity "GroupName"
+  ```
+-Listing the members of a group
+```powershell
+Get-DistributionGroupMember -Identity "GroupName"
+  ```
+  
+-Listing all Distribution groups
+```powershell
+Get-DistributionGroup
+  ```
+-Moving Distribution group to different organizational unit
+```powershell
+Move-DistributionGroup -Identity "GroupName" -OrganizationalUnit "OU=NewMarketing,DC=yourdomain,DC=com"  
+```
+##** Creating a Distribution Group: **##
+  
+Using the Exchange Admin Center (EAC):
+
+- Log in to the EAC.
+- Navigate to recipients > groups.
+- Click the plus icon to create a new group.
+- Fill in the required information, such as the group name, email address, and membership.
+- Click save.
+  
+  ![10](https://user-images.githubusercontent.com/86381942/212593915-295e410f-f73c-46ab-b5e3-bd1800a3109f.png)
+
   
   
