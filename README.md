@@ -297,7 +297,8 @@ Dynamic Distribution Groups are created using the Exchange Management Shell (EMS
 ```powershell
     New-DynamicDistributionGroup -Name "HR Team" -OrganizationalUnit "OU=HR,OU=Employes,DC=yourdomain,DC=com" -RecipientFilter {((Department -eq "HR") -and (RecipientType -eq 'UserMailbox'))}
     ```
-   This command creates a dynamic distribution group called "HR Team" that includes all users in the "HR" OU. 
+   
+    This command creates a dynamic distribution group called "HR Team" that includes all users in the "HR" OU. 
 
     ![12](https://user-images.githubusercontent.com/86381942/212608672-bd28150c-b30e-4357-8b55-fe55e37898a5.png)
 
@@ -306,24 +307,32 @@ Dynamic Distribution Groups are created using the Exchange Management Shell (EMS
    ```powershell
     Set-DynamicDistributionGroup -Identity "HR Team" -ManagedBy "JohnDoe"
 ```
-  - You can also use the -ManagedBy parameter to add multiple managers to the dynamic distribution group.  
+  
+    - You can also use the -ManagedBy parameter to add multiple managers to the dynamic distribution group.  
    
     ```powershell
     Set-DynamicDistributionGroup -Identity "HR Team" -ManagedBy "JohnDoe","JaneDoe"
 ```
+    
     - You can use the Get-DynamicDistributionGroup cmdlet in PowerShell to view the properties of an existing dynamic distribution group in Exchange Server.
+   
     ```powershell
     Get-DynamicDistributionGroup -Identity "HR Team"
 ```
-   - You can also use the -Identity parameter to specify multiple dynamic distribution groups, separated by a comma.
+  
+    - You can also use the -Identity parameter to specify multiple dynamic distribution groups, separated by a comma.
+    
     ```powershell
     Get-DynamicDistributionGroup -Identity "HR Team","Marketing Team"
 ```
-  - Removing a dynamic distribution group:
+ 
+    - Removing a dynamic distribution group:
+    
     ```powershell
     Remove-DynamicDistributionGroup -Identity "Marketing Team"
 ```
     - Listing the members of a dynamic distribution group:
+   
     ```powershell
     Get-DynamicDistributionGroup -Identity "Marketing Team" | Get-Recipient | Select-Object -ExpandProperty PrimarySmtpAddress
 ```
@@ -332,19 +341,22 @@ Dynamic Distribution Groups are created using the Exchange Management Shell (EMS
     ```powershell
     New-DynamicDistributionGroup -Name "Marketing Team" -OrganizationalUnit "OU=Marketing,DC=yourdomain,DC=com" -ManagedBy "JohnDoe" -RecipientFilter {((OrganizationalUnit -eq "OU=Marketing,DC=yourdomain,DC=com") -and (RecipientType -eq 'UserMailbox') -and (Enabled -eq $True))}
 ```
-- You can also use other attributes to filter the dynamic distribution group, like the department, the title, the location, the company, etc.
+
+    - You can also use other attributes to filter the dynamic distribution group, like the department, the title, the location, the company, etc.
     
 ```powershell
     New-DynamicDistributionGroup -Name "Marketing Team" -OrganizationalUnit "OU=Marketing,DC=yourdomain,DC=com" -ManagedBy "JohnDoe" -RecipientFilter {((OrganizationalUnit -eq "OU=Marketing,DC=yourdomain,DC=com") -and (Department -eq "Marketing") -and (RecipientType -eq 'UserMailbox') -and (Enabled -eq $True))}
 ```
- - This command creates a dynamic distribution group called "Marketing Team" that includes all enabled users in the "Marketing" department and in the "Marketing" OU, with "JohnDoe" as the designated owner.   
+ 
+    - This command creates a dynamic distribution group called "Marketing Team" that includes all enabled users in the "Marketing" department and in the "Marketing" OU, with "JohnDoe" as the designated owner.   
     
   - You can also use the -Notes parameter to add a note to the distribution group.
     
     ```powershell
     New-DynamicDistributionGroup -Name "Marketing Team" -OrganizationalUnit "OU=Marketing,DC=yourdomain,DC=com" -ManagedBy "JohnDoe" -RecipientFilter {((OrganizationalUnit -eq "OU=Marketing,DC=yourdomain,DC=com") -and (Department -eq "Marketing") -and (RecipientType -eq 'UserMailbox') -and (Enabled -eq $True))} -Notes "Marketing Team distribution group"
 ```
-##**Create a dynamic distribution group in ECP**##   
+
+    ##**Create a dynamic distribution group in ECP**##   
 - Log in to the ECP using your administrator credentials.
 
 - In the ECP, navigate to the Recipients section and click on the Distribution Groups tab.
