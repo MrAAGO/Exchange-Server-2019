@@ -459,5 +459,85 @@ An email address policy in Exchange Server is a set of rules that automatically 
 
 ![17](https://user-images.githubusercontent.com/86381942/212825556-b799333a-6848-4ed0-8eaa-137b8b73f5f2.png)
 
+  **To configure an email address policy in Exchange 2019, you will need to use the Exchange Management Shell (EMS). Here are the steps**
+
+-Open the Exchange Management Shell (EMS) on the Exchange server.
+
+-Use the following command to create a new email address policy:
+
+  - To create an email address policy that adds a prefix to all email addresses in a specific department:
+  
+  ```powershell
+  New-EmailAddressPolicy -Name "Department Prefix Policy" -IncludedRecipients AllRecipients -ConditionalCustomAttribute1 "Department -eq 'Marketing'" -EnabledEmailAddressTemplates "SMTP:marketing-%g@domain.com"
+```
+  
+ - To create an email address policy that adds a suffix to all email addresses for external recipients:
+  
+   ```powershell
+  New-EmailAddressPolicy -Name "External Suffix Policy" -IncludedRecipients ExternalRecipients -EnabledEmailAddressTemplates "SMTP:%m@domain.com-external"
+```
+  
+  - To create an email address policy that adds a domain name to all email addresses for a specific group:
+
+  ```powershell
+  New-EmailAddressPolicy -Name "Group Domain Policy" -IncludedRecipients AllRecipients -ConditionalCustomAttribute1 "Group -eq 'Accounting'" -EnabledEmailAddressTemplates "SMTP:%m@accounting.com"
+  ```
+  
+  - To create an email address policy that adds a custom address to all email addresses for a specific mailbox:
+  
+  ```powershell
+  New-EmailAddressPolicy -Name "Custom Address Policy" -IncludedRecipients AllRecipients -ConditionalCustomAttribute1 "Mailbox -eq 'JohnDoe'" -EnabledEmailAddressTemplates "SMTP:johndoe@custom.com"
+```
+  
+  - New email address policy
+  
+  ```powershell
+  New-EmailAddressPolicy -Name "Policy Name" -IncludedRecipients AllRecipients -ConditionalCustomAttribute1 "condition" -EnabledEmailAddressTemplates "SMTP:%m@domain.com"
+```
+  Note: Replace "Policy Name" with the desired name for the policy, "condition" with the condition that will trigger the policy to apply (such as a specific department or group), and "domain.com" with your domain name.
+  
+  - Use the following command to apply the policy:
+  
+  ```powershell
+  Update-EmailAddressPolicy -Identity "Policy Name"
+```
+  - Note: Replace "Policy Name" with the name of the policy you just created.
+  
+  - You can also use the following command to verify the policy you've created:
+  
+  ```powershell
+  Get-EmailAddressPolicy | Format-List
+```
+  
+  - To create an email address policy for specific users
+  
+  ```powershell
+  New-EmailAddressPolicy -Name "Specific Users Policy" -IncludedRecipients MailboxUsers -ConditionalCustomAttribute1 "Name -eq 'User1' -or Name -eq 'User2'" -EnabledEmailAddressTemplates "SMTP:%g.%s@domain.com"
+```
+ - Replace "User1" and "User2" with the specific user or users you want this policy to apply to, and "domain.com" with your domain name.
+  
+  - Use the following command to apply the policy:
+  
+  ```powershell
+  Update-EmailAddressPolicy -Identity "Specific Users Policy"
+```
+  
+  - To verify that the policy was applied to specific users, use the following command:
+  
+  ```powershell
+  Get-Recipient -Filter {EmailAddresses -like "*"} | Where-Object {$_.EmailAddresses -like "SMTP:*domain.com"} | Format-List Name,EmailAddresses
+```
+  **Once the email address policy is configured, it will automatically apply to all new and existing recipients that meet the specified conditions, in this case, the policy will apply only to User1 and User2**
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
   
      
