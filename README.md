@@ -541,18 +541,15 @@ Accepted domains in Exchange 2019 are the domains for which the Exchange server 
 
 - Use the following command to create a new accepted domain: 
    
-   ```powershell
-   New-AcceptedDomain -Name "domain.com" -DomainName "domain.com" -DomainType "Authoritative"
-```
+   `New-AcceptedDomain -Name "domain.com" -DomainName "domain.com" -DomainType "Authoritative"`
+
   
    <b>Note: Replace "domain.com" with the domain name that you want to create as an accepted domain</b>
    
    - To set the new accepted domain as the default domain, use the following command:
    
-   ```powershell
-   Set-AcceptedDomain -Identity "domain.com" -IsDefault $true
-```
-   
+   `Set-AcceptedDomain -Identity "domain.com" -IsDefault $true`
+
    - To verify the accepted domains configured on your Exchange organization, you can use the following command
    
    `Get-AcceptedDomain`
