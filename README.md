@@ -21,6 +21,7 @@
         <li><a href="#shared">Create a Shared Mailbox </a></li>
         <li><a href="#policy">Create a Email Address Policy </a></li>
         <li><a href="#domain">Configure Accepted Domain </a></li>
+        <li><a href="#address"> Create Custom Address List </a></li>
       </ul>
     </nav>
     <section id="introduction">
@@ -581,6 +582,96 @@ Accepted domains in Exchange 2019 are the domains for which the Exchange server 
    ![19](https://user-images.githubusercontent.com/86381942/212830288-6ac964fb-b31c-45e3-bebc-1f99b0e54858.png)
 
    
+<section id="address">
+      <h2>Introduction</h2>
+      
+    A Custom Address List in Exchange 2019 is a collection of email addresses and contact information that is filtered and organized based on specific criteria, such as recipient type, custom attributes, and more. Custom address lists can be created and managed using the Exchange Management Shell (EMS) or the Exchange Admin Center (EAC) and it's a way to organize recipients in your organization for specific scenarios, for example, you can create an address list for all recipients in a specific department or location, or all recipients with a specific custom attribute. Custom address lists are used to make it easier to send email to a group of people, and they can be used in email clients such as Outlook and OWA (Outlook Web App) that support the use of custom address lists.
+    
+  <b>To create a custom address list in Exchange 2019, you will need to use the Exchange Management Shell (EMS). Here are the steps:</b>
+
+- Open the Exchange Management Shell (EMS) on the Exchange server.
+
+- Use the following command to create a new address list:
+
+```powershell
+New-AddressList -Name "Address List Name" -RecipientFilter {((RecipientType -eq 'UserMailbox') -and (CustomAttribute1 -eq 'value'))}
+```
+
+**Note: Replace "Address List Name" with the desired name for the address list and "value" with the value of the custom attribute that will be used to filter the recipients in the address list.**
+
+- Use the following command to update the offline address book (OAB) to include the new address list:
+
+```powershell
+Update-OfflineAddressBook -Identity "Default Offline Address Book"
+```
+
+- To verify that the custom address list was created, use the following command:
+
+```powershell
+Get-AddressList | Format-List Name
+```
+
+##Example##
+- Create an address list for all recipients in the "Marketing" department, you would specify "Marketing" as the value in the recipient filter:
+
+```powershell
+New-AddressList -Name "Marketing Department" -RecipientFilter {((RecipientType -eq 'UserMailbox') -and (Department -eq 'Marketing'))}
+```
+![22](https://user-images.githubusercontent.com/86381942/212835823-37210c34-de06-45e7-aba8-3906a275493e.png)
+
+- if you want to create an address list for all recipients that have a custom attribute named "Region" with the value "West", you would specify "West" as the value in the recipient filter:
+
+```powershell
+New-AddressList -Name "West Region" -RecipientFilter {((RecipientType -eq 'UserMailbox') -and (Region -eq 'West'))}
+```
+
+- It's also worth noting that you can use multiple attributes in the recipient filter to create more complex filter conditions, for example, you can filter based on recipient type and custom attributes:
+
+```powershell
+New-AddressList -Name "Contractors" -RecipientFilter {((RecipientType -eq 'UserMailbox') -and (IsContract -eq 'True'))}
+```
+
+**To delete a custom address list**
+`Remove-AddressList -Identity "Address List Name"`
+
+**verify that the address list has been deleted, use the following command:**
+`Get-AddressList | Format-List Name`
+
+<b>To create a custom address list in Exchange 2019 from the Exchange Admin Center (EAC), follow these steps:</b>
+
+- Open the Exchange Admin Center (EAC) by navigating to https://<your-server-name>/ecp.
+
+- In the EAC, navigate to Recipients > Address lists.
+
+- Click the "+" button to create a new address list.
+
+- Fill in the following fields:
+
+        - Name: Enter a name for the address list
+        - Select recipients: Select the recipients that should be included in the list.
+        - Add recipients by: Choose the way you want to add recipients, you can add them manually or by filtering them based on recipient attributes.
+
+- Click Save to create the address list.
+
+- To verify the address list was created, navigate to Recipients > Address lists, you should see the address list you've just created.
+
+![21](https://user-images.githubusercontent.com/86381942/212836549-629a7bb9-f1de-4a8e-a55b-c6cdbe18a7bf.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
    
