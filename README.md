@@ -413,7 +413,7 @@ Set-Mailbox -Identity "sharedalias" -Password (ConvertTo-SecureString "password"
 ```
 - Once the mailbox is created, users with the appropriate permissions will be able to access it in Outlook or OWA (Outlook Web App).
 
-**To create a shared mailbox from EAC, follow these steps **
+**To create a shared mailbox from EAC, follow these steps**
 
 - Open the Exchange Admin Center (EAC) by navigating to https://<your-server-name>/ecp.
 
