@@ -17,7 +17,8 @@
         <li><a href="#databasenew">Create a New Mailbox Database</a></li>
         <li><a href="#resource">Create Resource Mailboxes</a></li>
         <li><a href="#distribution">Create Distribution Group</a></li>
-        <li><a href="#dynamic">Dynamic Distribution Group</a></li>
+        <li><a href="#dynamic">Create Dynamic Distribution Group</a></li>
+        <li><a href="#shared">Create a Shared Mailbox </a></li>
       </ul>
     </nav>
     <section id="introduction">
@@ -378,4 +379,59 @@ Dynamic Distribution Groups are created using the Exchange Management Shell (EMS
     
     ![11](https://user-images.githubusercontent.com/86381942/212609696-9a0b1872-9122-401f-b8cc-1880f568c614.png)
 
-  
+  <section id="shared">
+      <h2>Create a Shared Mailbox </h2>
+      
+     A shared mailbox in Exchange Server is a mailbox that multiple users can access and use to send and receive email. Shared mailboxes are typically used for shared email accounts such as info@, support@, or sales@. Shared mailboxes allow teams to collaborate and manage shared email accounts without having to share login credentials or access to personal email accounts. They can also be used to store emails that are sent to a specific department or team, allowing multiple people to view and respond to them. Shared mailboxes can be accessed via Outlook, OWA (Outlook Web App), or other email clients that support the use of shared mailboxes
+ 
+ - To create a shared mailbox in Exchange 2019 using PowerShell, you will need to use the Exchange Management Shell (EMS). Here are the steps:
+
+- Open the Exchange Management Shell (EMS) on the Exchange server.
+
+- Use the following command to create the shared mailbox:
+
+```powershell
+New-Mailbox -Shared -Name "Shared Mailbox Name" -DisplayName "Shared Mailbox Display Name" -Alias "sharedalias"
+```
+- Note: Replace "Shared Mailbox Name" and "Shared Mailbox Display Name" with the desired name and display name for the shared mailbox and "sharedalias" with the desired email address
+
+![14](https://user-images.githubusercontent.com/86381942/212821835-a2143a0a-6a1a-4e6b-8436-16bbf23b83f1.png)
+
+- Use the following command to give permissions to specific user or group to access the shared mailbox:
+
+```powershell
+Add-MailboxPermission -Identity "sharedalias" -User "user1" -AccessRights FullAccess
+```
+- Note: Replace "user1" with the user or group you want to give access to the shared mailbox.
+
+![16](https://user-images.githubusercontent.com/86381942/212821968-9aab46ab-2903-49e9-b725-a29d9ddc6418.png)
+
+- Use the following command to set a password for the shared mailbox:
+
+```powershell
+Set-Mailbox -Identity "sharedalias" -Password (ConvertTo-SecureString "password" -AsPlainText -Force)
+```
+- Once the mailbox is created, users with the appropriate permissions will be able to access it in Outlook or OWA (Outlook Web App).
+
+**To create a shared mailbox from EAC, follow these steps **
+
+- Open the Exchange Admin Center (EAC) by navigating to https://<your-server-name>/ecp.
+
+- In the EAC, navigate to Recipients > Shared.
+
+- Click the "+" button to create a new shared mailbox.
+
+- Enter a name and email address for the shared mailbox and click "Save".
+
+- Assign permissions to the mailbox by clicking the "Permissions" tab and adding users or groups as necessary.
+
+- Once the mailbox is created, users with the appropriate permissions will be able to access it in Outlook or OWA (Outlook Web App).
+
+![15](https://user-images.githubusercontent.com/86381942/212822232-88d3a80c-b729-45e5-8e5b-5d94bb92dceb.png)
+
+
+
+
+
+
+     
