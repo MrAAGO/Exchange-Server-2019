@@ -20,6 +20,7 @@
         <li><a href="#dynamic">Create Dynamic Distribution Group</a></li>
         <li><a href="#shared">Create a Shared Mailbox </a></li>
         <li><a href="#policy">Create a Email Address Policy </a></li>
+        <li><a href="#domain">Configure Accepted Domain </a></li>
       </ul>
     </nav>
     <section id="introduction">
@@ -529,8 +530,62 @@ An email address policy in Exchange Server is a set of rules that automatically 
 ```
   **Once the email address policy is configured, it will automatically apply to all new and existing recipients that meet the specified conditions, in this case, the policy will apply only to User1 and User2**
   
-  
-  
+ <section id="domain">
+      <h2>Configure Accepted Domain in Exchange 2019</h2> 
+   
+Accepted domains in Exchange 2019 are the domains for which the Exchange server will accept and deliver email. They specify which email addresses the server will recognize as valid and which it will reject. An accepted domain can be set as an authoritative domain, meaning the Exchange server is the final destination for email sent to that domain, or an internal relay domain, meaning the email will be forwarded to another email server. Accepted domains are typically set for the primary domain of an organization and any additional domains that the organization wants to receive email for. They can be managed and configured using the Exchange Management Shell (EMS) or the Exchange Admin Center (EAC) and it's a crucial part of the mail flow configuration in Exchange Server.
+   
+  - To configure an accepted domain in Exchange 2019, you will need to use the Exchange Management Shell (EMS). Here are the steps:
+
+- Open the Exchange Management Shell (EMS) on the Exchange server.
+
+- Use the following command to create a new accepted domain: 
+   
+   ```powershell
+   New-AcceptedDomain -Name "domain.com" -DomainName "domain.com" -DomainType "Authoritative"
+```
+  **Note: Replace "domain.com" with the domain name that you want to create as an accepted domain**
+   
+   - To set the new accepted domain as the default domain, use the following command:
+   
+   ```powershell
+   Set-AcceptedDomain -Identity "domain.com" -IsDefault $true
+```
+   - To verify the accepted domains configured on your Exchange organization, you can use the following command
+   
+   `Get-AcceptedDomain`
+   
+   ![18](https://user-images.githubusercontent.com/86381942/212829873-b8c15254-736c-445b-ac22-60aa5c0a1e2a.png)
+   
+   **Configure Accepted Domain in Exchange 2019 from EAC**
+   
+ - To configure an accepted domain in Exchange 2019 from the Exchange Admin Center (EAC), follow these steps:
+
+- Open the Exchange Admin Center (EAC) by navigating to https://<your-server-name>/ecp.
+
+- In the EAC, navigate to Mail Flow > Accepted domains.
+
+- Click the "+" button to create a new accepted domain.
+
+- Fill in the following fields:
+
+        - Name: Enter a name for the accepted domain
+        - Domain name: Type the domain name that you want to create as an accepted domain.
+        - Accepted domain type: Select whether the domain is Authoritative or Internal relay.
+   
+ - Click Save to create the accepted domain.
+
+- To set the new accepted domain as the default domain, select the domain and click the "Set as default" button
+
+- To verify the accepted domains configured on your Exchange organization, navigate to Mail Flow > Accepted domains, you should see the domain you've just created
+   
+   ![19](https://user-images.githubusercontent.com/86381942/212830288-6ac964fb-b31c-45e3-bebc-1f99b0e54858.png)
+
+   
+
+
+   
+   
   
   
   
