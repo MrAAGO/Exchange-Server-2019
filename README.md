@@ -586,6 +586,7 @@ Accepted domains in Exchange 2019 are the domains for which the Exchange server 
       <h2>Introduction</h2>
       
     A Custom Address List in Exchange 2019 is a collection of email addresses and contact information that is filtered and organized based on specific criteria, such as recipient type, custom attributes, and more. Custom address lists can be created and managed using the Exchange Management Shell (EMS) or the Exchange Admin Center (EAC) and it's a way to organize recipients in your organization for specific scenarios, for example, you can create an address list for all recipients in a specific department or location, or all recipients with a specific custom attribute. Custom address lists are used to make it easier to send email to a group of people, and they can be used in email clients such as Outlook and OWA (Outlook Web App) that support the use of custom address lists.
+  
     
   <b>To create a custom address list in Exchange 2019, you will need to use the Exchange Management Shell (EMS). Here are the steps:</b>
 
@@ -593,9 +594,8 @@ Accepted domains in Exchange 2019 are the domains for which the Exchange server 
 
 - Use the following command to create a new address list:
 
-```powershell
-New-AddressList -Name "Address List Name" -RecipientFilter {((RecipientType -eq 'UserMailbox') -and (CustomAttribute1 -eq 'value'))}
-```
+`New-AddressList -Name "Address List Name" -RecipientFilter {((RecipientType -eq 'UserMailbox') -and (CustomAttribute1 -eq 'value'))}`
+
 
 **Note: Replace "Address List Name" with the desired name for the address list and "value" with the value of the custom attribute that will be used to filter the recipients in the address list.**
 
@@ -611,7 +611,8 @@ Update-OfflineAddressBook -Identity "Default Offline Address Book"
 Get-AddressList | Format-List Name
 ```
 
-##Example##
+#Example#
+  
 - Create an address list for all recipients in the "Marketing" department, you would specify "Marketing" as the value in the recipient filter:
 
 ```powershell
