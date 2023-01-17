@@ -19,6 +19,7 @@
         <li><a href="#distribution">Create Distribution Group</a></li>
         <li><a href="#dynamic">Create Dynamic Distribution Group</a></li>
         <li><a href="#shared">Create a Shared Mailbox </a></li>
+        <li><a href="#policy">Create a Email Address Policy </a></li>
       </ul>
     </nav>
     <section id="introduction">
@@ -430,8 +431,33 @@ Set-Mailbox -Identity "sharedalias" -Password (ConvertTo-SecureString "password"
 ![15](https://user-images.githubusercontent.com/86381942/212822232-88d3a80c-b729-45e5-8e5b-5d94bb92dceb.png)
 
 
+<section id="policy">
+      <h2>Create a Email Address Policy</h2>
+  
+An email address policy in Exchange Server is a set of rules that automatically assigns email addresses to recipients, such as users and groups, based on specific conditions. These policies can be used to add prefixes, suffixes, or custom domains to email addresses, making it easier to identify the recipient's department, group, or location. Email address policies can also be used to ensure that all email addresses follow a specific format and meet compliance requirements. Once an email address policy is configured, it will automatically apply to all new and existing recipients that meet the specified conditions. This means that administrators don't need to manually update email addresses for each recipient. Email address policies can be managed and configured using the Exchange Management Shell (EMS) or the Exchange Admin Center (EAC).
+  
+  **To create an email address policy from the Exchange Admin Center (EAC) in Exchange 2019, follow these steps:**
 
+- Open the Exchange Admin Center (EAC) by navigating to https://<your-server-name>/ecp.
 
+- In the EAC, navigate to Mail Flow > Email address policies.
 
+- Click the "+" button to create a new email address policy.
 
+- Fill in the following fields:
+
+- Name: Enter a name for the email address policy
+- Included recipients: Select the recipients that this policy will apply to. (Users, Groups, All, etc)
+- Apply this policy: Select the conditions that will trigger the policy to apply, such as a specific department or group.
+- Email address format: Select the format of the email address that the policy will assign.
+- Email address: Type the email address format that you want to use.
+- Click Save to create the email address policy.
+
+- To apply the email address policy, select the policy and click the "Apply" button
+
+- To verify that the policy was applied, navigate to Recipients > Mailboxes and check the email addresses of the users that the policy should have applied to.
+
+![17](https://user-images.githubusercontent.com/86381942/212825556-b799333a-6848-4ed0-8eaa-137b8b73f5f2.png)
+
+  
      
