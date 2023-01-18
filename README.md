@@ -22,6 +22,7 @@
         <li><a href="#policy">Create a Email Address Policy </a></li>
         <li><a href="#domain">Configure Accepted Domain </a></li>
         <li><a href="#address"> Create Custom Address List </a></li>
+        <li><a href="#custom"> Create Custom Global Address List </a></li>
       </ul>
     </nav>
     <section id="introduction">
@@ -656,6 +657,111 @@ New-AddressList -Name "Contractors" -RecipientFilter {((RecipientType -eq 'UserM
 - To verify the address list was created, navigate to Recipients > Address lists, you should see the address list you've just created.
 
 ![21](https://user-images.githubusercontent.com/86381942/212836549-629a7bb9-f1de-4a8e-a55b-c6cdbe18a7bf.png)
+
+<section id="custom">
+      <h2>Create Custom Global Address List</h2>
+      
+ A custom global address list (GAL) is a customized version of the default global address list in an Exchange Server organization. The default GAL contains all mail-enabled objects in an Exchange organization, such as users, groups, and contacts. A custom GAL, on the other hand, allows you to create a specific subset of those objects based on certain criteria, such as department, location, or custom attributes.
+
+For example, you can create a custom GAL that only includes users in the Marketing department, or a custom GAL that only includes users in a specific location. This allows users to easily find and communicate with the specific group of people they need to, without having to search through the entire GAL.
+
+- To create a custom global address list (GAL) in Exchange 2019, you can use the Exchange Management Shell. Here are the steps to follow:
+
+- Open the Exchange Management Shell on your Exchange server.
+
+- Use the New-GlobalAddressList cmdlet to create a new GAL. For example, the following command creates a new GAL called "Custom GAL" that includes all mail-enabled users in the "HR" department:
+
+```powershell
+New-GlobalAddressList -Name "Custom GAL" -RecipientFilter {(RecipientType -eq 'UserMailbox') -and (Department -eq 'HR')}
+```
+
+![23](https://user-images.githubusercontent.com/86381942/213072150-4aed3586-5c1d-4a07-85ac-d4290d391b7e.png)
+
+- Use the Set-GlobalAddressList cmdlet to modify the newly created GAL as needed. For example, the following command sets the custom GAL as the default GAL:
+
+`Set-GlobalAddressList -Identity "Custom GAL" -DefaultGlobalAddressList $true`
+
+- Use the Update-GlobalAddressList cmdlet to update the GAL so that it will reflect the changes that you have made:
+
+`Update-GlobalAddressList -Identity "Custom GAL"`
+
+<B>Before create or modify a GAL, it's recommended to backup your current GAL and test the custom GAL on a test environment.</B>
+
+- To check a custom global address list (GAL) in Exchange 2019
+
+`Get-GlobalAddressList -Identity "Custom GAL"`
+
+- To view the recipients in the custom GAL, you can use the Get-Recipient cmdlet with the -Filter or -RecipientFilter parameter. For example, the following command gets all the recipients in the custom GAL:
+
+```powershell
+Get-Recipient -RecipientPreviewFilter {(alias -ne $null) -and (RecipientType -eq 'UserMailbox') -and (CustomAttribute1 -eq 'Marketing')}
+```
+- To view the recipients in a specific department in the custom GAL, you can use the Get-Recipient cmdlet with the -Filter or -RecipientFilter parameter. For example, the following command gets all the recipients in the "Marketing" department in the custom GAL:
+
+```powershell
+Get-Recipient -RecipientPreviewFilter {(alias -ne $null) -and (RecipientType -eq 'UserMailbox') -and (Department -eq 'Marketing')}
+```
+
+<b>You can substitute "CustomAttribute1" with the custom attribute that you used in the filter when you created the custom GAL.</b>
+
+To delete a custom global address list (GAL)
+
+`Remove-GlobalAddressList -Identity "Custom GAL"`
+
+<b>Before you delete a custom GAL, it's recommended to make sure that it is no longer needed and it won't affect any other functionality in your organization. Also it's a good practice to backup your current GAL and test the deletion on a test environment.</b>
+
+<b>To create a custom global address list (GAL) in Exchange 2019 using the Exchange Admin Center (EAC), follow these steps:</b>
+
+- Open the Exchange Admin Center (EAC) by navigating to https://yourserver/ecp in a web browser.
+
+- Log in with your administrator credentials.
+
+- In the EAC, navigate to Recipients > Address Lists.
+
+- Click the "+" (plus) button to create a new address list.
+
+- In the "New Address List" window, enter a name for the custom GAL.
+
+- In the "Recipient filter" section, you can specify the criteria for the custom GAL. For example, you can include only users in the "Marketing" department by adding the following filter: (Department -eq 'Marketing')
+
+- Click Save to create the custom GAL.
+
+- The custom GAL will now appear in the list of address lists.
+
+- To set this custom GAL as the default GAL, navigate to Recipients > Address Lists, select the custom GAL and click on the three dots on the right corner of the custom GAL and select "Set as Default
+
+![24](https://user-images.githubusercontent.com/86381942/213074392-b8ccaf6c-1ee1-4e5c-8e1c-52ff19400f21.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
