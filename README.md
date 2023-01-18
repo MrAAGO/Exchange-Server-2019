@@ -768,7 +768,7 @@ Set-OfflineAddressBook -Identity "Custom OAB" -VirtualDirectories $null
 
 ![27](https://user-images.githubusercontent.com/86381942/213096933-be148d18-e194-431a-8529-7a6d2bbc1726.png)
 
-**Delete an Offline Address Book (OAB)
+**Delete an Offline Address Book (OAB)**
 
 `Remove-OfflineAddressBook -Identity "Custom OAB"`
 
@@ -781,13 +781,13 @@ Set-OfflineAddressBook -Identity "Custom OAB" -VirtualDirectories $null
 ```powershell
 Get-MailboxDatabase | where {$_.OfflineAddressBook -ne $null} | Format-Table Name,OfflineAddressBook
 ```
-**This command will retrieve all the mailbox databases in your Exchange organization, and display the name and Offline Address Book associated with each.
+**This command will retrieve all the mailbox databases in your Exchange organization, and display the name and Offline Address Book associated with each.**
 
 - To view the properties of a specific Offline Address Book you could use the following command:
 
 `Get-OfflineAddressBook -Identity "OAB name" | Format-List`
 
-**This command will retrieve the specific Offline Address Book you are looking for and display all the properties of that OAB.
+**This command will retrieve the specific Offline Address Book you are looking for and display all the properties of that OAB.**
 
 
 
