@@ -585,7 +585,7 @@ Accepted domains in Exchange 2019 are the domains for which the Exchange server 
 
    
 <section id="address">
-      <h2>Introduction</h2>
+      <h2>Create Custom Address List in Exchange 2019 </h2>
       
 A Custom Address List in Exchange 2019 is a collection of email addresses and contact information that is filtered and organized based on specific criteria, such as recipient type, custom attributes, and more. Custom address lists can be created and managed using the Exchange Management Shell (EMS) or the Exchange Admin Center (EAC) and it's a way to organize recipients in your organization for specific scenarios, for example, you can create an address list for all recipients in a specific department or location, or all recipients with a specific custom attribute. Custom address lists are used to make it easier to send email to a group of people, and they can be used in email clients such as Outlook and OWA (Outlook Web App) that support the use of custom address lists.
     
