@@ -772,7 +772,7 @@ Set-OfflineAddressBook -Identity "Custom OAB" -VirtualDirectories $null
 
 `Remove-OfflineAddressBook -Identity "Custom OAB"`
 
-**View the Offline Address Book (OAB)
+**View the Offline Address Book (OAB)**
 
 `Get-OfflineAddressBook`
 
