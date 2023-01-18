@@ -23,6 +23,7 @@
         <li><a href="#domain">Configure Accepted Domain </a></li>
         <li><a href="#address"> Create Custom Address List </a></li>
         <li><a href="#custom"> Create Custom Global Address List </a></li>
+        <li><a href="#offline"> Create Offline Address Book </a></li>
       </ul>
     </nav>
     <section id="introduction">
@@ -731,6 +732,77 @@ To delete a custom global address list (GAL)
 - To set this custom GAL as the default GAL, navigate to Recipients > Address Lists, select the custom GAL and click on the three dots on the right corner of the custom GAL and select "Set as Default
 
 ![24](https://user-images.githubusercontent.com/86381942/213074392-b8ccaf6c-1ee1-4e5c-8e1c-52ff19400f21.png)
+
+
+<section id="offline">
+      <h2>Create Offline Address Book in Exchange 2019</h2>
+      
+An Offline Address Book (OAB) is a local copy of a Global Address List (GAL) that is downloaded and cached on a client computer. The OAB allows Outlook clients to access contact information, even when they are not connected to the Exchange server. This is particularly useful for users who work remotely or who have limited or unreliable network connectivity. 
+
+In Exchange 2019, OABs are generated automatically on a regular schedule and are distributed to Outlook clients via a web-based distribution method. The OAB generation process creates a copy of the GAL and compresses it into a file with a .oab file extension. This file can then be downloaded by Outlook clients.
+
+**To create a new Offline Address Book in Exchange 2019, you can use the Exchange Management Shell. Here are the steps to follow:
+
+- Open the Exchange Management Shell on your Exchange server.
+
+- Use the New-OfflineAddressBook cmdlet to create a new OAB. For example, the following command creates a new OAB called "Custom OAB" that includes all mail-enabled users in the "Marketing" department:
+
+```powershell
+New-OfflineAddressBook -Name "Custom OAB" -AddressLists "Custom GAL"
+```
+![25](https://user-images.githubusercontent.com/86381942/213096614-3b2e44c6-09c4-463d-bad3-9f7ef322fd96.png)
+
+![26](https://user-images.githubusercontent.com/86381942/213096631-8fba8139-960e-4a2b-bd8f-10ab243cf88e.png)
+
+- Use the Update-OfflineAddressBook cmdlet to update the OAB so that it will reflect the changes that you have made:
+
+```powershell
+Update-OfflineAddressBook -Identity "Custom OAB"
+```
+
+- To set this custom OAB as the default OAB, use the Set-OfflineAddressBook cmdlet:
+
+```powershell
+Set-OfflineAddressBook -Identity "Custom OAB" -VirtualDirectories $null
+```
+
+![27](https://user-images.githubusercontent.com/86381942/213096933-be148d18-e194-431a-8529-7a6d2bbc1726.png)
+
+**Delete an Offline Address Book (OAB)
+
+`Remove-OfflineAddressBook -Identity "Custom OAB"`
+
+**View the Offline Address Book (OAB)
+
+`Get-OfflineAddressBook`
+
+- Retrieve all the Offline Address Books in your Exchange organization, and display the name and server name of each.
+
+```powershell
+Get-MailboxDatabase | where {$_.OfflineAddressBook -ne $null} | Format-Table Name,OfflineAddressBook
+```
+**This command will retrieve all the mailbox databases in your Exchange organization, and display the name and Offline Address Book associated with each.
+
+- To view the properties of a specific Offline Address Book you could use the following command:
+
+`Get-OfflineAddressBook -Identity "OAB name" | Format-List`
+
+**This command will retrieve the specific Offline Address Book you are looking for and display all the properties of that OAB.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
