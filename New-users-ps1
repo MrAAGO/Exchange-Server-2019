@@ -1,0 +1,38 @@
+# Import the Active Directory module
+Import-Module ActiveDirectory
+
+# Define the variables for the new user
+$Name = "John Doe"
+$UserPrincipalName = "johndoe@example.com"
+$Password = ConvertTo-SecureString "P@ssw0rd" -AsPlainText -Force
+$FirstName = "John"
+$LastName = "Doe"
+$DisplayName = "John Doe"
+$OrganizationalUnit = "example.com/Users"
+$StorageQuota = 100MB
+$DistributionGroupName = "Marketing Team"
+$SecurityGroupName = "Marketing Team - Full Access"
+
+# Create the new user in Active Directory
+New-ADUser -Name $Name -SamAccountName $UserPrincipalName -UserPrincipalName $UserPrincipalName -AccountPassword $Password -FirstName $FirstName -LastName $LastName -DisplayName $DisplayName -Path $OrganizationalUnit
+
+# Enable the mailbox for the new user
+Enable-Mailbox -Identity $UserPrincipalName
+
+# Set the storage quota for the mailbox
+Set-Mailbox -Identity $UserPrincipalName -StorageQuota $StorageQuota
+
+# Create a distribution group
+New-DistributionGroup -Name $DistributionGroupName -OrganizationalUnit "example.com/Groups"
+
+# Add the new user to the distribution group
+Add-DistributionGroupMember -Identity $DistributionGroupName -Member $UserPrincipalName
+
+# Create a security group
+New-ADGroup -Name $SecurityGroupName -GroupScope Global -GroupCategory Security -Path "example.com/Groups"
+
+# Add the new user to the security group
+Add-ADGroupMember -Identity $SecurityGroupName -Members $UserPrincipalName
+
+# Add permissions to the mailbox for the security group
+Add-MailboxPermission -Identity $UserPrincipalName -User $SecurityGroupName -AccessRights FullAccess
