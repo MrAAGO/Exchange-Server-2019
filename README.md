@@ -808,7 +808,8 @@ Get-MailboxDatabase | where {$_.OfflineAddressBook -ne $null} | Format-Table Nam
 ![29](https://user-images.githubusercontent.com/86381942/214220608-493a126b-e7b7-4f7a-a67f-e247357f1b23.png)
 
   
-    <p>It's also recommend to use the same URL for internal and external to avoid issues with autodiscover, also it's important to configure the SSL certificate for these URLs.</p>
+    
+ <p>It's also recommend to use the same URL for internal and external to avoid issues with autodiscover, also it's important to configure the SSL certificate for these URLs.</p>
 
 - Also you can configure Internal and External URLs for other virtual directories that exchange provide like OWA, OAB, Autodiscover, etc.
     
