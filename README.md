@@ -26,6 +26,7 @@
         <li><a href="#offline"> Create Offline Address Book </a></li>
         <li><a href="#url"> Configure Internal and External URLs</a></li>
         <li><a href="#pop3"> Configure POP3 Services></li>
+        <li><a href="#outlook">Configure Outlook Anywhere></li>
       </ul>
     </nav>
     <section id="introduction">
@@ -879,6 +880,30 @@ Get-MailboxDatabase | where {$_.OfflineAddressBook -ne $null} | Format-Table Nam
       
  Test the POP3 connection by trying to send and receive email through Outlook.
 Please note that the above configuration is a basic example, you may need to adjust the settings based on your organization's specific requirements. 
+      
+      
+ <section id="outlook">
+      <h2>Configure Outlook Anywhere in Exchange 2019</h2> 
+   
+   - To configure Outlook Anywhere (also known as RPC over HTTP) in Exchange 2019, you will need to perform the following steps:
+
+- Open the Exchange Management Shell (EMS) on the Exchange server.
+
+- Run the following cmdlet to enable Outlook Anywhere for the entire organization:
+
+```powershell
+  Set-OutlookAnywhere -Identity "ServerName\Rpc (Default Web Site)" -ExternalHostname <OutlookAnywhereFQDN> -DefaultAuthenticationMethod NTLM -InternalHostname <ExchangeServerFQDN> -InternalClientsRequireSsl $true -ExternalClientsRequireSsl $true
+   ```
+
+![30](https://user-images.githubusercontent.com/86381942/214227093-a5ca22b4-cb18-44b5-9e93-19adb568448e.png)
+   
+   
+![31](https://user-images.githubusercontent.com/86381942/214227130-2c7bf9fe-a9d2-4d11-b28f-dbb9040f559a.png)
+   
+   
+![32](https://user-images.githubusercontent.com/86381942/214227139-7e929ff0-7582-439f-b459-6a4d246faefd.png)
+
+   
       
       
 
