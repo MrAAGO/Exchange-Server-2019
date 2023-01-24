@@ -801,10 +801,16 @@ Get-MailboxDatabase | where {$_.OfflineAddressBook -ne $null} | Format-Table Nam
    
     `Set-WebServicesVirtualDirectory -Identity "EWS (Default Web Site)" -ExternalUrl https://mail.contoso.com/EWS/Exchange.asmx`
 
-   
+   ![28](https://user-images.githubusercontent.com/86381942/214220552-7d0b278e-8296-47bd-9698-f89cbc7aa3a1.png)
+    
+    ![29](https://user-images.githubusercontent.com/86381942/214220559-f61471f5-088a-4814-8070-c0d713750d8f.png)
+
+  
     <p>It's also recommend to use the same URL for internal and external to avoid issues with autodiscover, also it's important to configure the SSL certificate for these URLs.</p>
 
 - Also you can configure Internal and External URLs for other virtual directories that exchange provide like OWA, OAB, Autodiscover, etc.
+    
+    
 
 
 
