@@ -795,16 +795,12 @@ Get-MailboxDatabase | where {$_.OfflineAddressBook -ne $null} | Format-Table Nam
     - In order to configure internal and external URLs in Exchange 2019, you will need to use the Exchange Management Shell (EMS).
     - To configure the internal URLs, you can use the following cmdlet:
     
-   ```powershell
-    Set-WebServicesVirtualDirectory -Identity "EWS (Default Web Site)" -InternalUrl https://mail.contoso.com/EWS/Exchange.asmx
-    ```
-  
+    `Set-WebServicesVirtualDirectory -Identity "EWS (Default Web Site)" -InternalUrl https://mail.contoso.com/EWS/Exchange.asmx`
 
   - To configure the external URLs, you can use the following cmdlet:
    
-    ```powershell
-    Set-WebServicesVirtualDirectory -Identity "EWS (Default Web Site)" -ExternalUrl https://mail.contoso.com/EWS/Exchange.asmx
-```
+    `Set-WebServicesVirtualDirectory -Identity "EWS (Default Web Site)" -ExternalUrl https://mail.contoso.com/EWS/Exchange.asmx`
+
    
     <p>It's also recommend to use the same URL for internal and external to avoid issues with autodiscover, also it's important to configure the SSL certificate for these URLs.</p>
 
