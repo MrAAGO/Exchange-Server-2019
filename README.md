@@ -813,13 +813,13 @@ Get-MailboxDatabase | where {$_.OfflineAddressBook -ne $null} | Format-Table Nam
 
 - Also you can configure Internal and External URLs for other virtual directories that exchange provide like OWA, OAB, Autodiscover, etc.
     
-  - For Outlook on the web (OWA):
+- For Outlook on the web (OWA):
     
     ```
     Set-OwaVirtualDirectory -Identity "OWA (Default Web Site)" -InternalUrl https://mail.contoso.com/owa -ExternalUrl https://mail.contoso.com/owa
 ```
     
-  - For Offline Address Book (OAB):
+    - For Offline Address Book (OAB):
     
     ```
     Set-OabVirtualDirectory -Identity "OAB (Default Web Site)" -InternalUrl https://mail.contoso.com/oab -ExternalUrl https://mail.contoso.com/oab
@@ -831,7 +831,7 @@ Get-MailboxDatabase | where {$_.OfflineAddressBook -ne $null} | Format-Table Nam
     Set-AutodiscoverVirtualDirectory -Identity "Autodiscover (Default Web Site)" -InternalUrl https://mail.contoso.com/autodiscover/autodiscover.xml -ExternalUrl https://mail.contoso.com/autodiscover/autodiscover.xml
 ```
     
-   - For ActiveSync
+  - For ActiveSync
     
     ```
     Set-ActiveSyncVirtualDirectory -Identity "Microsoft-Server-ActiveSync (Default Web Site)" -InternalUrl https://mail.contoso.com/Microsoft-Server-ActiveSync -ExternalUrl https://mail.contoso.com/Microsoft-Server-ActiveSync
