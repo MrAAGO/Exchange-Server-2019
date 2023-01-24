@@ -24,6 +24,7 @@
         <li><a href="#address"> Create Custom Address List </a></li>
         <li><a href="#custom"> Create Custom Global Address List </a></li>
         <li><a href="#offline"> Create Offline Address Book </a></li>
+        <li><a href="#url"> Configure Internal and External URLs</a></li>
       </ul>
     </nav>
     <section id="introduction">
@@ -788,8 +789,26 @@ Get-MailboxDatabase | where {$_.OfflineAddressBook -ne $null} | Format-Table Nam
 `Get-OfflineAddressBook -Identity "OAB name" | Format-List`
 
 **This command will retrieve the specific Offline Address Book you are looking for and display all the properties of that OAB.**
+  
+  <section id="url">
+      <h2>Configure Internal and External URLs in Exchange 2019</h2>
+    - In order to configure internal and external URLs in Exchange 2019, you will need to use the Exchange Management Shell (EMS).
+    - To configure the internal URLs, you can use the following cmdlet:
+    
+   ```powershell
+    Set-WebServicesVirtualDirectory -Identity "EWS (Default Web Site)" -InternalUrl https://mail.contoso.com/EWS/Exchange.asmx
+    ```
+  
 
+  - To configure the external URLs, you can use the following cmdlet:
+   
+    ```powershell
+    Set-WebServicesVirtualDirectory -Identity "EWS (Default Web Site)" -ExternalUrl https://mail.contoso.com/EWS/Exchange.asmx
+```
+   
+    <p>It's also recommend to use the same URL for internal and external to avoid issues with autodiscover, also it's important to configure the SSL certificate for these URLs.</p>
 
+- Also you can configure Internal and External URLs for other virtual directories that exchange provide like OWA, OAB, Autodiscover, etc.
 
 
 
