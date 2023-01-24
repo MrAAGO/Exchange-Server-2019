@@ -815,29 +815,31 @@ Get-MailboxDatabase | where {$_.OfflineAddressBook -ne $null} | Format-Table Nam
     
   - For Outlook on the web (OWA):
     
-    ```powershell
+    ```
     Set-OwaVirtualDirectory -Identity "OWA (Default Web Site)" -InternalUrl https://mail.contoso.com/owa -ExternalUrl https://mail.contoso.com/owa
 ```
     
    - For Offline Address Book (OAB):
     
-    ```powershell
+    ```
     Set-OabVirtualDirectory -Identity "OAB (Default Web Site)" -InternalUrl https://mail.contoso.com/oab -ExternalUrl https://mail.contoso.com/oab
 ```
     
     - For Autodiscover:
     
-    ```powershell
+    ```
     Set-AutodiscoverVirtualDirectory -Identity "Autodiscover (Default Web Site)" -InternalUrl https://mail.contoso.com/autodiscover/autodiscover.xml -ExternalUrl https://mail.contoso.com/autodiscover/autodiscover.xml
 ```
     
     - For ActiveSync
     
-    ```powershell
+    ```
     Set-ActiveSyncVirtualDirectory -Identity "Microsoft-Server-ActiveSync (Default Web Site)" -InternalUrl https://mail.contoso.com/Microsoft-Server-ActiveSync -ExternalUrl https://mail.contoso.com/Microsoft-Server-ActiveSync
 ```
     
-    Make sure to replace "https://mail.contoso.com" with the appropriate URLs for your organization and to configure the SSL certificate for these URLs.
+    
+    
+  - Make sure to replace "https://mail.contoso.com" with the appropriate URLs for your organization and to configure the SSL certificate for these URLs.
     
     
     
