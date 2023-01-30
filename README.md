@@ -953,8 +953,8 @@ We can see that This users doesnt have permission to send Email.
 
 <section id="attach">
       <h2>How to Increase Max Received Size in Exchange 2019</h2>
-- Use the following command to view the current attachment size limit:
-  `Get-TransportConfig | Select MaxReceiveSize`  
+  - Use the following command to view the current attachment size limit:
+    `Get-TransportConfig | Select MaxReceiveSize`  
   
   - Use the following command to increase the attachment size limit:
     `Set-TransportConfig -MaxReceiveSize <SizeInBytes>`
