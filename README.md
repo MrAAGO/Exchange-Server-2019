@@ -941,10 +941,10 @@ We can see that This users doesnt have permission to send Email.
 - Use the following command to set message delivery restrictions for a specific mailbox:
 
 `Set-Mailbox <Identity> -MessageDeliveryRestriction <Restriction>`
-- <Identity> is the identity of the mailbox for which you want to set the message delivery restrictions.
-- <Restriction> is the message delivery restriction you want to apply to the mailbox.
+- Identity is the identity of the mailbox for which you want to set the message delivery restrictions.
+- Restriction is the message delivery restriction you want to apply to the mailbox.
 
-*Example.
+* Example.
 `Set-Mailbox "Rob Smith" -MessageDeliveryRestriction RejectMessageFromSendersNotInSafeSendersList`
 
 - Use the following command to verify the changes:
