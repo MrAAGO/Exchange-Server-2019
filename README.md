@@ -29,6 +29,7 @@
         <li><a href="#outlook">Configure Outlook Anywhere></li>
         <li><a href="#restrict">Configure Message Delivery Restrictions for a Mailbox ></li>
         <li><a href="#attach">How to Increase File Attachment Size></li>
+         <li><a href="#offaccess">Enable Offline Access in Outlook></li>  
       </ul>
     </nav>
     <section id="introduction">
@@ -990,8 +991,24 @@ We can see that This users doesnt have permission to send Email.
   * Note: The maximum send message size limit applies to all email messages sent from the Exchange server, not just a specific mailbox.
   
   
-  
+  <section id="offaccess">
+      <h2>Enable Offline Access in Outlook on the Web in Exchange 2019</h2>
+    
+- To enable offline access in Outlook on the Web (OWA) in Exchange 2019:
+   - Log in to OWA as the user for whom you want to enable offline access.
+   - Click on the gear icon in the upper-right corner and select "Offline settings".
+   
+    ![54](https://user-images.githubusercontent.com/86381942/215623538-1ce4a31a-f7bd-4243-b31c-ec30a620e67f.png)
+    
+    - Select the folders that you want to be available offline.
+    - Click on the "Save" button to apply the changes.
+    
+    ![55](https://user-images.githubusercontent.com/86381942/215623643-3c47626c-7765-487f-8cb9-b226ea141f32.png)
+    
+    
 
+
+    
 
 
   
