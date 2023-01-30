@@ -28,6 +28,7 @@
         <li><a href="#pop3"> Configure POP3 Services></li>
         <li><a href="#outlook">Configure Outlook Anywhere></li>
         <li><a href="#restrict">Configure Message Delivery Restrictions for a Mailbox ></li>
+        <li><a href="#attach">How to Increase File Attachment Size></li>
       </ul>
     </nav>
     <section id="introduction">
@@ -950,7 +951,50 @@ We can see that This users doesnt have permission to send Email.
 - Use the following command to verify the changes:
 `Get-Mailbox <Identity> | Select MessageDeliveryRestriction`
 
+<section id="attach">
+      <h2>How to Increase Max Received Size in Exchange 2019</h2>
+- Use the following command to view the current attachment size limit:
+  `Get-TransportConfig | Select MaxReceiveSize`  
+  
+  - Use the following command to increase the attachment size limit:
+    `Set-TransportConfig -MaxReceiveSize <SizeInBytes>`
+  
+  - Restart the Microsoft Exchange Transport service for the changes to take effect:
+    `Restart-Service MSExchangeTransport`
+  
+  ![40](https://user-images.githubusercontent.com/86381942/215620646-10df468d-f341-4a18-ab69-110050a8b0f7.png)
+  
+  ## To increase the maximum send message size (MB) in Exchange 2019
+  
+  - Use the following command to view the current maximum send message size limit:
+  `Get-TransportConfig | Select MaxSendSize`
+  
+  - Use the following command to increase the maximum send message size limit:
+  `Set-TransportConfig -MaxSendSize <SizeInBytes>`
+  
+  * Restart the Exchage Transport Services.
+ 
+  ![41](https://user-images.githubusercontent.com/86381942/215620936-78acf442-1c08-43e7-8c34-4675fafe7074.png)
 
+  ## To increase the maximum send message size limit in Exchange 2019 from Exchange Admin Center (EAC):
+
+- Open the Exchange Admin Center.
+- Select mail flow in the navigation menu.
+- Select send connectors.
+- Select the send connector for which you want to increase the maximum send message size limit.
+- Select edit.
+- Select the general tab.
+- Under message size restrictions, increase the value in the maximum send size field.
+- Select save to apply the changes.
+
+  * Note: The maximum send message size limit applies to all email messages sent from the Exchange server, not just a specific mailbox.
+  
+  
+  
+
+
+
+  
 
 
       
