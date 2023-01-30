@@ -27,6 +27,7 @@
         <li><a href="#url"> Configure Internal and External URLs</a></li>
         <li><a href="#pop3"> Configure POP3 Services></li>
         <li><a href="#outlook">Configure Outlook Anywhere></li>
+        <li><a href="#restrict">Configure Message Delivery Restrictions for a Mailbox ></li>
       </ul>
     </nav>
     <section id="introduction">
@@ -904,8 +905,52 @@ Please note that the above configuration is a basic example, you may need to adj
 ![32](https://user-images.githubusercontent.com/86381942/214227139-7e929ff0-7582-439f-b459-6a4d246faefd.png)
 
    
+ <section id="restrict">
+      <h2>Configure Message Delivery Restrictions for a Mailbox </h2>     
       
+  *To configure message delivery restrictions for a mailbox in Exchange 2019:
+
+- Open the Exchange Admin Center.
+- Select recipients in the navigation menu.
+- Select mailboxes.
+
+![35](https://user-images.githubusercontent.com/86381942/215617981-5d37c76f-e61b-4b2c-94ce-1710539e627e.png)
+
+
+- Select the mailbox for which you want to configure message delivery restrictions.
+- Select edit.
+
+![36](https://user-images.githubusercontent.com/86381942/215618033-dfa41cf0-5827-4ed1-b0c0-63709ad3ae4f.png)
+
+
+- Select Mailbox Features.
+- Under Message delivery restrictions, select Configure.
+- Select the options you want to apply to the mailbox.
+- Click Save to apply the restrictions.    
       
+![38](https://user-images.githubusercontent.com/86381942/215618056-4ebb77d3-0205-4f79-8972-1e0ee33868b5.png)
+
+We can see that This users doesnt have permission to send Email.
+
+![39](https://user-images.githubusercontent.com/86381942/215618258-afd605a6-00a6-4661-be9b-aa546ffceb99.png)
+
+
+## To configure message delivery restrictions for a mailbox using PowerShell in Exchange 2019:
+
+- Open Exchange Management Shell.
+- Use the following command to set message delivery restrictions for a specific mailbox:
+
+`Set-Mailbox <Identity> -MessageDeliveryRestriction <Restriction>`
+- <Identity> is the identity of the mailbox for which you want to set the message delivery restrictions.
+- <Restriction> is the message delivery restriction you want to apply to the mailbox.
+
+*Example.
+`Set-Mailbox "Rob Smith" -MessageDeliveryRestriction RejectMessageFromSendersNotInSafeSendersList`
+
+- Use the following command to verify the changes:
+`Get-Mailbox <Identity> | Select MessageDeliveryRestriction`
+
+
 
 
       
