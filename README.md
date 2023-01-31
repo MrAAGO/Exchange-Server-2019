@@ -108,7 +108,11 @@ To create a user mailbox in Exchange Server 2019, you can use the Exchange Manag
   
   ![2](https://user-images.githubusercontent.com/86381942/212558906-2cb5a7f1-92c4-4698-adfb-b5ed56ed196c.png)
 
-<section id="database">
+- To disable the mailbox `Disable-Mailbox -Identity "UserMailbox" `
+- delete the mailbox `Remove-Mailbox -Identity "UserMailbox" -Permanent $True `
+   
+    
+  <section id="database">
       <h2>Rename and Move a Mailbox Database</h2>
   
   <b>To rename and move a mailbox database in Exchange Server 2019, you can use the Exchange Management Shell (EMS) to perform the following steps:</b>
