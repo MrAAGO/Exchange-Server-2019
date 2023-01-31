@@ -1104,13 +1104,14 @@ We can see that This users doesnt have permission to send Email.
    
    ![70](https://user-images.githubusercontent.com/86381942/215633480-da8b24f2-c86f-486e-a7af-5e2ffec7631a.png)
 
+- Select Audit this Rule as * MEDIUM  
 - Save the rule and test it by sending a message that meets the condition.
 
 Note: Before configuring email disclaimer, make sure that transport rules feature is enabled in your Exchange organization.
    
   ## Example, 
    
-    ![72](https://user-images.githubusercontent.com/86381942/215633686-9fa06aa9-aa84-4b03-a3fe-b2f71a11acbe.png)
+![72](https://user-images.githubusercontent.com/86381942/215633686-9fa06aa9-aa84-4b03-a3fe-b2f71a11acbe.png)
 
 
 
