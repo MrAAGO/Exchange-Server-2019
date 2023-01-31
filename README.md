@@ -110,8 +110,9 @@ To create a user mailbox in Exchange Server 2019, you can use the Exchange Manag
 
 - To disable the mailbox `Disable-Mailbox -Identity "UserMailbox" `
 - delete the mailbox `Remove-Mailbox -Identity "UserMailbox" -Permanent $True `
-   
-    
+- To connect a disabled mailbox `Connect-Mailbox -Identity "DisabledMailbox" -User "NewUser" ` 
+- To restore a deleted mailbox `New-MailboxRestoreRequest -SourceMailbox <GUID> -TargetMailbox <UserIdentity> `  
+      
   <section id="database">
       <h2>Rename and Move a Mailbox Database</h2>
   
