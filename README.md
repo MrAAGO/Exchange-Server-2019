@@ -1064,16 +1064,18 @@ We can see that This users doesnt have permission to send Email.
   ![62](https://user-images.githubusercontent.com/86381942/215628087-80401b95-23c3-4bcc-af6f-e97f895b6b7a.png)
   
   <section id="limit">
-      <h2>Introduction</h2>
+      <h2>Configure Mailbox Database Limits in Exchange Server 2019</h2>
     
     * To configure mailbox database limits in Exchange Server 2019
     
-    `Set-MailboxDatabase -Identity <DatabaseName> -IssueWarningQuota <Size> -ProhibitSendQuota <Size> -ProhibitSendReceiveQuota <Size>`
+         `Set-MailboxDatabase -Identity <DatabaseName> -IssueWarningQuota <Size> -ProhibitSendQuota <Size> -ProhibitSendReceiveQuota <Size>`
     
-    ![64](https://user-images.githubusercontent.com/86381942/215630843-51d3df3d-70e2-4af0-b46b-1f8f3adc89e4.png)
+![64](https://user-images.githubusercontent.com/86381942/215631275-d012978e-4956-459b-a52d-1d2d80f4a152.png)
+
     
     - Use the following command to check mailbox database quota:
-    `Get-MailboxDatabase -Identity "DB02" | Select-Object *Quota*`
+        
+        `Get-MailboxDatabase -Identity "DB02" | Select-Object *Quota*`
     
     
     
