@@ -36,6 +36,7 @@
          <li><a href="#limit">Configure Mailbox Database Limits</li>   
          <li><a href="#dis">How to Configure Email Disclaimer</li> 
          <li><a href="#jour">Configure Journaling</li> 
+         <li><a href="#dbmv">Move Mailbox to Another Database</li>  
       </ul>
     </nav>
     <section id="introduction">
@@ -1138,7 +1139,38 @@ Note: Before configuring email disclaimer, make sure that transport rules featur
 * Note: The target mailbox for journaling must have enough storage capacity to hold the journaled messages.
 
 
+<section id="dbmv">
+      <h2>Move Mailbox to Another Database in Exchange 2019</h2>
+  
+  - Run the following cmdlet to initiate the migration:
+    `New-MoveRequest -Identity "UserMailbox" -TargetDatabase "TargetDatabaseName"`
+  
+  * Note Replace "UserMailbox" with the name of the mailbox you want to move and "TargetDatabaseName" with the name of the target database.
+  
+  - To monitor the migration, run the following cmdlet:
+  
+  `Get-MoveRequest -Identity "UserMailbox" | Get-MoveRequestStatistics`
+  
+  - Once the migration is completed, run the following cmdlet to verify that the mailbox has been successfully moved:
+ 
+  `Get-Mailbox -Identity "UserMailbox" | Format-List Database`
+  
+  - Check the database for all users `Get-Mailbox | Select-Object DisplayName, Database `
+  
+   - To save the output to a file, you can add the Export-CSV cmdlet, like this:
+  
+  ```powershell
+  Get-Mailbox | Select-Object DisplayName, Database | Export-CSV "MailboxDatabase.csv"
+```
+  
+  This will save the output to a file named "MailboxDatabase.csv" in the current directory.
 
+  
+![75](https://user-images.githubusercontent.com/86381942/215641021-76fb1597-6632-4e75-ad61-4a5293722e56.png)
+
+
+
+  
   
   
   
