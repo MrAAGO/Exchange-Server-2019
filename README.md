@@ -37,6 +37,7 @@
          <li><a href="#dis">How to Configure Email Disclaimer</li> 
          <li><a href="#jour">Configure Journaling</li> 
          <li><a href="#dbmv">Move Mailbox to Another Database</li>  
+         <li><a href="#setper">Setting up Mailbox Permissions </li>  
       </ul>
     </nav>
     <section id="introduction">
@@ -1173,7 +1174,25 @@ Note: Before configuring email disclaimer, make sure that transport rules featur
   
 ![75](https://user-images.githubusercontent.com/86381942/215641021-76fb1597-6632-4e75-ad61-4a5293722e56.png)
 
+<section id="setper">
+      <h2>Setting up Mailbox Permissions </h2>
+  
+* To set up mailbox permissions in Exchange 2019:
 
+- Open the Exchange Admin Center (EAC).
+- Go to "Recipients" and then "Mailboxes".
+- Select the mailbox for which you want to set up permissions.
+- Click on "Edit" under "Mailbox delegation".
+- Click the "+" button to add a user.
+- Enter the name or email address of the user you want to add.
+- Select the type of access you want to grant the user. You can choose from the following options:
+- "Full Access": the user has complete control over the mailbox.
+- "Send As": the user can send emails on behalf of the mailbox owner.
+- "Send on Behalf": the user can send emails on behalf of the mailbox owner, but the recipient sees that the email was sent by both the mailbox owner and the delegate.
+- Click "Save" to apply the permissions.
+* Note: To remove a user from the mailbox delegation, simply select the user and click the "-" button.
+  
+  ![76](https://user-images.githubusercontent.com/86381942/215643224-a87b0210-0bb6-4bd7-ba97-03577242b6d4.png)
 
   
   
