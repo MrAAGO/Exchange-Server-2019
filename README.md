@@ -33,7 +33,8 @@
          <li><a href="#emailfor">Configure Email Forwarding</li>  
          <li><a href="#mailtip">Configure Custom MailTips for Recipients</li> 
          <li><a href="#quota">Configure Storage Quota for a Mailbox</li>   
-         <li><a href="#limit">Configure Mailbox Database Limits</li>    
+         <li><a href="#limit">Configure Mailbox Database Limits</li>   
+         <li><a href="#dis">How to Configure Email Disclaimer</li> 
       </ul>
     </nav>
     <section id="introduction">
@@ -1078,8 +1079,39 @@ We can see that This users doesnt have permission to send Email.
         `Get-MailboxDatabase -Identity "DB02" | Select-Object *Quota*`
     
     
-    
-    
+ <section id="dis">
+      <h2>How to Configure Email Disclaimer in Exchange 2019</h2>
+   
+*To configure email disclaimer in Exchange 2019, you can use the following steps:
+
+- Create a new transport rule using the Exchange Admin Center (EAC) or PowerShell.
+   
+   ![67](https://user-images.githubusercontent.com/86381942/215633168-a452ad4d-40e2-4535-aeb9-1d91fe699595.png)
+
+
+- Set the condition for the rule to apply the disclaimer to all outgoing messages, or specific messages based on criteria such as recipient, sender, or subject.
+
+- Choose the type of disclaimer to be added, such as a text or HTML disclaimer.
+
+![68](https://user-images.githubusercontent.com/86381942/215633325-1ad82787-957b-47c2-9dd2-742086f227ce.png)
+
+   
+   Enter the text of the disclaimer.
+   
+![69](https://user-images.githubusercontent.com/86381942/215633350-5077c670-149b-4b67-87ef-6bf9e7d62d15.png)
+
+- Now Click On Select One and Select Ignore
+   
+   ![70](https://user-images.githubusercontent.com/86381942/215633480-da8b24f2-c86f-486e-a7af-5e2ffec7631a.png)
+
+- Save the rule and test it by sending a message that meets the condition.
+
+Note: Before configuring email disclaimer, make sure that transport rules feature is enabled in your Exchange organization.
+   
+  ## Example, 
+   
+    ![72](https://user-images.githubusercontent.com/86381942/215633686-9fa06aa9-aa84-4b03-a3fe-b2f71a11acbe.png)
+
 
 
 
