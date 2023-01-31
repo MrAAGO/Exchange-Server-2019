@@ -35,6 +35,7 @@
          <li><a href="#quota">Configure Storage Quota for a Mailbox</li>   
          <li><a href="#limit">Configure Mailbox Database Limits</li>   
          <li><a href="#dis">How to Configure Email Disclaimer</li> 
+         <li><a href="#jour">Configure Journaling</li> 
       </ul>
     </nav>
     <section id="introduction">
@@ -1114,9 +1115,27 @@ Note: Before configuring email disclaimer, make sure that transport rules featur
 ![72](https://user-images.githubusercontent.com/86381942/215633686-9fa06aa9-aa84-4b03-a3fe-b2f71a11acbe.png)
 
 
+<section id="jour">
+      <h2>Introduction</h2>
+
+* In Exchange 2019, journal rules can be managed in the Compliance management section in the Exchange Admin Center (EAC). To access the journal rules in the compliance management section:
+
+- Log into the Exchange Admin Center (EAC).
+- Go to "Compliance management" and then "Journal rules".
+- Here you can view all existing journal rules, edit or delete them, or create new rules.
+- To create a new journal rule, click on the "+" icon and provide a name for the rule.
+
+![73](https://user-images.githubusercontent.com/86381942/215638675-ce2cde6c-2cb1-462c-8600-42171cc04b79.png)
 
 
+- Specify the recipients or distribution groups to be journaled.
+- Select the target mailbox for the journaled messages.
+- Save the changes.
 
+![74](https://user-images.githubusercontent.com/86381942/215638699-ac1d808f-e00b-4233-a2d3-a13dcefc7b29.png)
+
+
+* Note: The target mailbox for journaling must have enough storage capacity to hold the journaled messages.
 
 
 
