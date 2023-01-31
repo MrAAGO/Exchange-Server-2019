@@ -25,11 +25,12 @@
         <li><a href="#custom"> Create Custom Global Address List </a></li>
         <li><a href="#offline"> Create Offline Address Book </a></li>
         <li><a href="#url"> Configure Internal and External URLs</a></li>
-        <li><a href="#pop3"> Configure POP3 Services></li>
-        <li><a href="#outlook">Configure Outlook Anywhere></li>
-        <li><a href="#restrict">Configure Message Delivery Restrictions for a Mailbox ></li>
-        <li><a href="#attach">How to Increase File Attachment Size></li>
-         <li><a href="#offaccess">Enable Offline Access in Outlook></li>  
+        <li><a href="#pop3"> Configure POP3 Services</li>
+        <li><a href="#outlook">Configure Outlook Anywhere</li>
+        <li><a href="#restrict">Configure Message Delivery Restrictions for a Mailbox></li>
+        <li><a href="#attach">How to Increase File Attachment Size</li>
+         <li><a href="#offaccess">Enable Offline Access in Outlook</li>  
+         <li><a href="#emailfor">Configure Email Forwarding</li>   
       </ul>
     </nav>
     <section id="introduction">
@@ -1006,8 +1007,27 @@ We can see that This users doesnt have permission to send Email.
     ![55](https://user-images.githubusercontent.com/86381942/215623643-3c47626c-7765-487f-8cb9-b226ea141f32.png)
     
     
+<section id="emailfor">
+      <h2>Configure Email Forwarding for a Mailbox in Exchange 2019</h2>
+  
+- To configure email forwarding for a mailbox in Exchange 2019:
 
+- Use the following command to enable email forwarding for a specific mailbox:
+  `Set-Mailbox <Identity> -ForwardingAddress <ForwardingAddress> -DeliverToMailboxAndForward $true`
+  
+* Identity is the identity of the mailbox for which you want to configure email forwarding.
+* ForwardingAddress> is the email address to which messages will be forwarded.
+* $true means that the messages will be delivered to the mailbox and forwarded to the specified address.
+  
+  ##Example
+ 
+  ![57](https://user-images.githubusercontent.com/86381942/215625054-76f625b1-d545-4902-b623-e8f220e7e247.png)
 
+  - Use the following command to verify the changes
+  
+`Get-Mailbox <Identity> | Select ForwardingAddress, DeliverToMailboxAndForward`
+  
+  
     
 
 
