@@ -30,7 +30,8 @@
         <li><a href="#restrict">Configure Message Delivery Restrictions for a Mailbox></li>
         <li><a href="#attach">How to Increase File Attachment Size</li>
          <li><a href="#offaccess">Enable Offline Access in Outlook</li>  
-         <li><a href="#emailfor">Configure Email Forwarding</li>   
+         <li><a href="#emailfor">Configure Email Forwarding</li>  
+         <li><a href="#mailtip">Configure Custom MailTips for Recipients</li>  
       </ul>
     </nav>
     <section id="introduction">
@@ -1028,7 +1029,24 @@ We can see that This users doesnt have permission to send Email.
 `Get-Mailbox <Identity> | Select ForwardingAddress, DeliverToMailboxAndForward`
   
   
-    
+ <section id="mailtip">
+      <h2>Configure Custom MailTips for Recipients in Exchange 2019</h2>   
+   
+   - Select the mailbox for which you want to configure a custom MailTip.
+   - Scroll down to the MailTips section.
+   - In the Message Tip box, enter the custom MailTip that you want to set.
+   - Click Save.
+   
+   ![58](https://user-images.githubusercontent.com/86381942/215626218-ee6a724b-87e0-43b0-8a27-915f302fdc07.png)
+
+   ![59](https://user-images.githubusercontent.com/86381942/215626250-cfd0ed78-1a7a-4916-9abd-18d797b15457.png)
+   
+   
+
+   
+   
+   
+   
 
 
   
