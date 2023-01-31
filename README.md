@@ -1116,7 +1116,7 @@ Note: Before configuring email disclaimer, make sure that transport rules featur
 
 
 <section id="jour">
-      <h2>Introduction</h2>
+      <h2>Configure Journaling  in Exchange 2019</h2>
 
 * In Exchange 2019, journal rules can be managed in the Compliance management section in the Exchange Admin Center (EAC). To access the journal rules in the compliance management section:
 
