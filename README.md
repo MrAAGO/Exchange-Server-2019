@@ -31,7 +31,8 @@
         <li><a href="#attach">How to Increase File Attachment Size</li>
          <li><a href="#offaccess">Enable Offline Access in Outlook</li>  
          <li><a href="#emailfor">Configure Email Forwarding</li>  
-         <li><a href="#mailtip">Configure Custom MailTips for Recipients</li>  
+         <li><a href="#mailtip">Configure Custom MailTips for Recipients</li> 
+         <li><a href="#quota">Configure Storage Quota for a Mailbox</li>   
       </ul>
     </nav>
     <section id="introduction">
@@ -1042,8 +1043,33 @@ We can see that This users doesnt have permission to send Email.
    ![59](https://user-images.githubusercontent.com/86381942/215626250-cfd0ed78-1a7a-4916-9abd-18d797b15457.png)
    
    
+<section id="quota">
+      <h2>Configure Storage Quota for a Mailbox in Exchange 2019</h2>
+  
+ - To configure storage quota for a mailbox in Exchange 2019 using PowerShell, you can use the Set-Mailbox cmdlet.
+  
+  `Get-Mailbox -ResultSize Unlimited | Set-Mailbox -UseDatabaseQuotaDefaults $False -IssueWarningQuota 4.9GB -ProhibitSendQuota 5GB`
+  
+  - to check the storage quotas for a specific mailbox, or you can retrieve the storage quotas for all mailboxes in your organization by using the following command:
+  
+  `Get-Mailbox -ResultSize Unlimited | Select-Object DisplayName,IssueWarningQuota,ProhibitSendQuota`
+  
+* This will return a list of all mailboxes in your organization, including the DisplayName, IssueWarningQuota, and ProhibitSendQuota properties for each mailbox. The IssueWarningQuota property represents the mailbox size at which a warning message will be sent to the user, and the ProhibitSendQuota property represents the maximum size for a mailbox beyond which the user will not be able to send messages.
+  
+## Example
+  
+  ![60](https://user-images.githubusercontent.com/86381942/215628075-e0744dad-3ff8-466b-b567-4f4a5483e581.png)
+  
+  ![62](https://user-images.githubusercontent.com/86381942/215628087-80401b95-23c3-4bcc-af6f-e97f895b6b7a.png)
+  
+  
 
-   
+
+
+
+  
+  
+  
    
    
    
