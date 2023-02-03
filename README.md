@@ -48,31 +48,7 @@ One of the key features of Exchange Server 2019 is its scalability. It is design
 
 Another important feature of Exchange Server 2019 is its security. It includes built-in protection against spam and malware, as well as advanced security features like data loss prevention and multi-factor authentication.
 
-Exchange Server 2019 also offers robust calendar and scheduling capabilities. Businesses can easily schedule meetings and appointments, and share calendars with colleagues and clients.
-
-In addition to these features, Exchange Server 2019 also offers a number of other capabilities such as support for mobile devices, integration with other Microsoft products like SharePoint and Skype for Business, and support for various mail clients like Outlook, Apple Mail, etc.
-
-Overall, Microsoft Exchange Server 2019 is a powerful and versatile email and calendar server software that can meet the needs of businesses of all sizes. With its scalability, security, and robust calendar and scheduling capabilities, it is an excellent choice for businesses that rely heavily on email and calendar functionality .</p>
-
-<p><b>In This project i am going to Configure several key settings of Microsoft Exchange Server
-
-  
-<li>Network Configuration: This includes configuring the server's IP address, DNS settings, and domain name.</li>
-
-<li>Mailbox Database Configuration: This includes creating and configuring mailbox databases, as well as setting up mailbox storage quotas.</li>
-
-<li>Transport Configuration: This includes configuring the server's message routing and transport settings, such as setting up connectors and transport rules.</li>
-
-<li>Anti-Spam and Anti-Malware Configuration: This includes configuring the server's built-in spam and malware protection, as well as setting up additional security measures like data loss prevention and multi-factor authentication.</li>
-
-<li>Client Access Configuration: This includes configuring the server's client access settings, such as setting up Outlook Web Access and Exchange ActiveSync.</li>
-
-<li>High Availability Configuration: This includes configuring the server's high availability features, such as setting up database availability groups and load balancing.</li>
-
-<li>Backup and Disaster Recovery Configuration: This includes configuring the server's backup and disaster recovery settings, such as setting up backup schedules and creating recovery plans.</li>
-
-<li>Monitoring and Reporting Configuration: This includes configuring the server's monitoring and reporting settings, such as setting up performance counters and creating custom reports...</p></b>
-    </section>
+The purpose of this documentation is to outline the steps involved in deploying an Exchange Server, configuring various settings, and creating various mailbox types. The Exchange Server is a messaging platform that provides email, calendar, and collaboration services to organizations. It allows users to access their email and calendar information from multiple devices and locations. This guide will provide a comprehensive understanding of the various steps involved in deploying an Exchange Server, including deploying an Exchange certificate, creating user mailboxes, creating resource mailboxes, distribution groups, dynamic distribution groups, shared mailboxes, email address policies, accepted domains, custom address lists, custom global address lists, offline address books, configuring internal and external URLs, POP3 services, Outlook Anywhere, message delivery restrictions for a mailbox, increasing file attachment size, enabling offline access in Outlook, email forwarding, custom mailtips for recipients, storage quota for a mailbox, mailbox database limits, email disclaimer, journaling, moving mailboxes to another database, and setting up mailbox permissions. This guide will also provide a detailed explanation of each step to ensure that the deployment and configuration process is successfull.
     
  <section id="mailbox">
       <h2>Create Users Mailbox</h2>
